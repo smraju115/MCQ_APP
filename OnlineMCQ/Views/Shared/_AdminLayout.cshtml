@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="~/mdb-ui-kit/mdb.min.css" rel="stylesheet" />
+    <link href="~/css/adminstylesheet.css" rel="stylesheet" />
+   
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="d-flex" id="wrapper">
+        <div id="sidebar" class="bg-dark text-white p-3 sidebar-expanded">
+            <ul class="nav flex-column">
+                <li class="nav-item d-flex align-items-center mb-2">
+                    <i class="bi bi-speedometer2 me-2"></i>
+                    <span class="sidebar-text">Dashboard</span>
+                </li>
+                <li class="nav-item d-flex align-items-center mb-2">
+                    <i class="bi bi-people me-2"></i>
+                    <span class="sidebar-text">Students</span>
+                </li>
+                <li class="nav-item d-flex align-items-center mb-2">
+                    <i class="bi bi-bar-chart-line me-2"></i>
+                    <span class="sidebar-text">Results</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Content Area beside sidebar -->
+        <div id="content-area" class="d-flex flex-column min-vh-100">
+            <!-- Top Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                <div class="container-fluid">
+                    <button class="btn btn-light" id="toggleSidebar">☰</button>
+                    <span class="navbar-brand">Admin Panel</span>
+                </div>
+            </nav>
+
+            <!-- Main Body -->
+            <main class="flex-grow-1 container-fluid mt-3">
+                @RenderBody()
+            </main>
+
+            <!-- Footer -->
+            <footer class="footer py-3 bg-light text-center">
+                <div class="container">
+                    <span class="text-muted">© 2025 - Coaching System</span>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/mdb-ui-kit/mdb.umd.min.js"></script>
+    <script src="~/mdb-ui-kit/mdb.es.min.js"></script>
+    <script src="~/js/adminjavascript.js"></script>
+
+
+    
+</body>
+</html>

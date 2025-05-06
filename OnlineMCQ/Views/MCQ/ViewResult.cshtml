@@ -1,0 +1,119 @@
+﻿@using Newtonsoft.Json
+@model OnlineMCQ.Models.TestResult
+@{
+    ViewData["Title"] = "পরীক্ষার ফলাফল";
+}
+
+@* 
+<div class="modal show d-block" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content shadow rounded-4 border-success">
+            <div class="modal-header bg-success text-white rounded-top">
+                <h5 class="modal-title">🎉 পরীক্ষার ফলাফল</h5>
+            </div>
+            <div class="modal-body">
+                <p><strong>👤 নাম:</strong> @Model.UserTest.Name</p>
+                <p><strong>❓ মোট প্রশ্ন:</strong> @Model.TotalQuestions</p>
+                <p><strong>✅ সঠিক উত্তর:</strong> <span class="text-success fw-bold">@Model.CorrectAnswers</span></p>
+                <p><strong>❌ ভুল উত্তর:</strong> <span class="text-danger fw-bold">@Model.WrongAnswers</span></p>
+                <p><strong>📅 পরীক্ষার তারিখ:</strong> @Model.SubmittedAt.ToString("dd MMM yyyy hh:mm tt")</p>
+            </div>
+            <div class="modal-footer">
+                <a href="/MCQ/StartTest" class="btn btn-primary">আবার পরীক্ষা দিন</a>
+                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#wrongModal">
+                    ভুল প্রশ্ন গুলো দেখুন
+                </button>
+            </div>
+        </div>
+    </div>
+</div> *@
+<div class="modal show d-block" tabindex="-1" id="resultModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content shadow rounded-4 border-success">
+            <div class="modal-header bg-success text-white rounded-top">
+                <h5 class="modal-title">🎉 পরীক্ষার ফলাফল</h5>
+                <button type="button" class="btn-close btn-close-white" aria-label="Close" onclick="closeResultModal();"></button>
+
+            </div>
+            <div class="modal-body">
+                <p><strong>👤 নাম:</strong> @Model.UserTest.Name</p>
+                <p><strong>❓ মোট প্রশ্ন:</strong> @Model.TotalQuestions</p>
+                <p><strong>✅ সঠিক উত্তর:</strong> <span class="text-success fw-bold">@Model.CorrectAnswers</span></p>
+                <p><strong>❌ ভুল উত্তর:</strong> <span class="text-danger fw-bold">@Model.WrongAnswers</span></p>
+                <p><strong>📅 পরীক্ষার তারিখ:</strong> @Model.SubmittedAt.ToString("dd MMM yyyy hh:mm tt")</p>
+            </div>
+            <div class="modal-footer">
+                <a href="/MCQ/StartTest" class="btn btn-primary">আবার পরীক্ষা দিন</a>
+                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#wrongModal">
+                    ভুল প্রশ্ন গুলো দেখুন
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="wrongModal" tabindex="-1" aria-labelledby="wrongModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">ভুল প্রশ্ন ও সঠিক উত্তর</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                @{
+                    var wrongList = TempData["WrongQuestions"] != null ?
+                    JsonConvert.DeserializeObject<List<OnlineMCQ.Models.Question>>(TempData["WrongQuestions"].ToString()) : null;
+
+                    var selected = TempData["SelectedAnswers"] != null ?
+                    JsonConvert.DeserializeObject<Dictionary<int, int>>(TempData["SelectedAnswers"].ToString()) : null;
+
+                    if (wrongList != null && selected != null)
+                    {
+                        foreach (var q in wrongList)
+                        {
+                            <div class="mb-3">
+                                <strong>প্রশ্ন:</strong> @q.QuestionText<br />
+                                <span class="text-danger">আপনার উত্তর: @GetOptionText(selected.ContainsKey(q.QuestionId) ? selected[q.QuestionId] : 0, q)</span><br />
+                                <span class="text-success">সঠিক উত্তর: @GetOptionText(q.CorrectAnswer, q)</span>
+                            </div>
+                        }
+                    }
+
+                    string GetOptionText(int option, OnlineMCQ.Models.Question q)
+                    {
+                        return option switch
+                        {
+                            1 => q.OptionA,
+                            2 => q.OptionB,
+                            3 => q.OptionC,
+                            4 => q.OptionD,
+                            _ => "উত্তর দেওয়া হয়নি"
+                        };
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script>
+        function closeResultModal() {
+            const modal = document.getElementById('resultModal');
+
+            // Remove Bootstrap modal classes
+            modal.classList.remove('show', 'd-block');
+
+            // Optionally hide the modal completely
+            modal.style.display = 'none';
+
+            // Also remove backdrop if added manually
+            const backdrops = document.getElementsByClassName('modal-backdrop');
+            while (backdrops.length > 0) {
+                backdrops[0].parentNode.removeChild(backdrops[0]);
+            }
+        }
+    </script>
+}

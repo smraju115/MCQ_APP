@@ -1,0 +1,25 @@
+﻿#fixedTickerBar {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Segoe UI', sans-serif;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
+
+@media (max-width: 768px) {
+    #fixedTickerBar {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    #fixedTickerBar {
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,18 @@
+﻿@model OnlineMCQ.Models.ExamSetting
+@{
+    ViewData["Title"] = "পরীক্ষার সময় সেটিং";
+}
+<h2>পরীক্ষার সময় সেট করুন</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label>পরীক্ষার সময় (মিনিট)</label>
+        <input type="number" name="DurationInMinutes" class="form-control" value="@Model.DurationInMinutes" required />
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">সংরক্ষণ করুন</button>
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-success mt-3">@ViewBag.Message</div>
+}

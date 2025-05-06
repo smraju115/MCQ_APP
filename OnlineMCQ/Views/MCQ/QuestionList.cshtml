@@ -1,0 +1,56 @@
+﻿@model IEnumerable<OnlineMCQ.Models.Question>
+
+@{
+    ViewData["Title"] = "QuestionList";
+}
+
+<h2>All Questions</h2>
+
+<a asp-action="CreateQuestion" class="btn btn-primary">Create New Question</a>
+<a asp-action="Index" asp-controller="MCQ" class="btn btn-info">Change Exam Time</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Question</th>
+            <th>Option A</th>
+            <th>Option B</th>
+            <th>Option C</th>
+            <th>Option D</th>
+            <th>Correct Answer</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var question in Model)
+        {
+            <tr>
+                <td>@question.QuestionText</td>
+                <td>@question.OptionA</td>
+                <td>@question.OptionB</td>
+                <td>@question.OptionC</td>
+                <td>@question.OptionD</td>
+                <td>
+                    @if (question.CorrectAnswer == 1)
+                    {
+                        <text>A</text>
+                    }
+                    else if (question.CorrectAnswer == 2)
+                    {
+                        <text>B</text>
+                    }
+                    else if (question.CorrectAnswer == 3)
+                    {
+                        <text>C</text>
+                    }
+                    else
+                    {
+                        <text>D</text>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+

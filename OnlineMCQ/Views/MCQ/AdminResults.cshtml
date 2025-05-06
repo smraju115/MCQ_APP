@@ -1,0 +1,35 @@
+﻿@model List<OnlineMCQ.Models.TestResult>
+
+@{
+    ViewData["Title"] = "AdminResults";
+}
+
+<h2>পরীক্ষার ফলাফল (অ্যাডমিন প্যানেল)</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>নাম</th>
+            <th>যোগাযোগ</th>
+            <th>সঠিক উত্তর</th>
+            <th>ভুল উত্তর</th>
+            <th>তারিখ</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var result in Model)
+        {
+            <tr>
+                <td>@result.Id</td>
+                <td>@result.UserTest.Name</td>
+                <td>@result.UserTest.Contact</td>
+                <td>@result.CorrectAnswers</td>
+                <td>@result.WrongAnswers</td>
+                <td>@result.SubmittedAt</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
