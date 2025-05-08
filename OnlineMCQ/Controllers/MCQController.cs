@@ -135,6 +135,8 @@ namespace OnlineMCQ.Controllers
             return View(results);
         }
 
+
+        //ExamTimeChangeMethod
         public IActionResult Index()
         {
             var setting = _context.ExamSettings.FirstOrDefault() ?? new ExamSetting { DurationInMinutes = 10 };

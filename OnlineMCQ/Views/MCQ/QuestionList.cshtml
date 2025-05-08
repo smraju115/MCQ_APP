@@ -2,12 +2,16 @@
 
 @{
     ViewData["Title"] = "QuestionList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>All Questions</h2>
+<h2 class="text-center">All Questions</h2>
 
-<a asp-action="CreateQuestion" class="btn btn-primary">Create New Question</a>
-<a asp-action="Index" asp-controller="MCQ" class="btn btn-info">Change Exam Time</a>
+<div class="mb-2">
+    <a asp-action="CreateQuestion" class="btn btn-primary">Create New Question</a>
+    <a asp-action="Index" asp-controller="MCQ" class="btn btn-info">Change Exam Time</a>
+</div>
+
 
 <table class="table table-bordered">
     <thead>

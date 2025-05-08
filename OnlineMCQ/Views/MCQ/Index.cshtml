@@ -1,15 +1,21 @@
 ﻿@model OnlineMCQ.Models.ExamSetting
 @{
-    ViewData["Title"] = "পরীক্ষার সময় সেটিং";
+    ViewData["Title"] = "Exam Time Setting";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-<h2>পরীক্ষার সময় সেট করুন</h2>
+
+<h2 class="text-center">Setup Exam Time</h2>
 
 <form method="post">
     <div class="form-group">
-        <label>পরীক্ষার সময় (মিনিট)</label>
+        <label>Exam Time (Min)</label>
         <input type="number" name="DurationInMinutes" class="form-control" value="@Model.DurationInMinutes" required />
     </div>
-    <button type="submit" class="btn btn-primary mt-2">সংরক্ষণ করুন</button>
+
+    <div class="mt-2">
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a asp-action="QuestionList" class="btn btn-dark">Back to List</a>
+    </div>
 </form>
 
 @if (ViewBag.Message != null)
