@@ -4,14 +4,29 @@
 
 
 
- <div>
-    <!-- Fixed News Ticker Style Top Bar -->
-    <div id="fixedTickerBar">
-        <div id="tickerContent">লোড হচ্ছে...</div>
+
+
+<!-- Main Content -->
+<div>
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <!-- WhatsApp Button -->
+        <a class="whatsapp-btn" href="https://wa.me/8801999812180" target="_blank" title="Chat on WhatsApp">
+            <!-- WhatsApp SVG Icon -->
+            <svg viewBox="0 0 32 32">
+                <path d="M16.001 2.002c-7.731 0-14 6.269-14 14 0 2.474.648 4.889 1.879 7.016l-1.945 5.682 5.823-1.93c1.993 1.093 4.24 1.671 6.53 1.671h.001c7.73 0 14-6.269 14-14s-6.269-14-14-14zm0 25.999c-1.991 0-3.939-.529-5.645-1.533l-.403-.239-3.455 1.145 1.151-3.399-.263-.412c-1.171-1.835-1.79-3.962-1.79-6.128 0-6.065 4.935-11 11-11 6.065 0 11 4.935 11 11s-4.935 11-11 11zm6.234-8.362c-.339-.169-2.007-.992-2.32-1.106-.312-.114-.54-.169-.768.17s-.882 1.105-1.082 1.333c-.199.227-.398.254-.736.084-.339-.169-1.43-.527-2.723-1.681-1.006-.897-1.684-2.004-1.881-2.343-.196-.34-.021-.523.148-.692.152-.151.339-.396.508-.594.17-.198.226-.34.34-.566.113-.226.057-.425-.028-.594-.084-.17-.768-1.854-1.053-2.542-.277-.665-.562-.575-.768-.584l-.654-.011c-.198 0-.52.075-.792.37s-1.04 1.016-1.04 2.479c0 1.462 1.065 2.875 1.213 3.074.147.198 2.099 3.203 5.087 4.492.71.306 1.263.488 1.694.624.712.227 1.36.195 1.871.118.571-.085 1.743-.712 1.99-1.399.246-.688.246-1.277.171-1.399-.075-.123-.283-.198-.622-.367z" />
+            </svg>
+        </a>
+
+        <!-- Top Button -->
+        <button class="top-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" title="GOko to Top">
+            <!-- Arrow Up SVG -->
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2l-10 10h6v10h8v-10h6z" />
+            </svg>
+        </button>
     </div>
-
     @* Carousel Begin  *@
-
     <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -50,38 +65,68 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-
     @* Carousel End  *@
 
     <div class="container marketing mt-3">
 
         <!-- Three columns of text below the carousel -->
         <div class="row">
+            <div class="text-center mb-5">
+                <h2 class="section-heading text-uppercase fw-bold">Our Teacher</h2>
+                <h3 class="section-subheading text-muted">We are here to assist your child. Reach us anytime!</h3>
+            </div>
             <div class="col-lg-4">
-                <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-                <h2>Syed Afridi Khan Bappy</h2>
-                <div class="text-white card-body rounded-3" style="background-color:darkblue">
-                    <p> <i class="bi bi-mortarboard-fill"></i> Bachelor : Bsc in Mathematics from Uttara University</p>
+                <div class="d-flex mb-2">
+                    <img class="rounded-circle" src="/TeachersImage/Bappy1.jpeg" alt="Generic placeholder image" width="140" height="140">
+                    <h3 class="ms-2 align-content-center">Syed Afridi Khan Bappy</h3>
+                </div>
+
+                <div class="text-white card-body rounded-3 h-55" style="background-color:darkblue; height:200px">
+                    <p> <i class="bi bi-mortarboard-fill"></i> Bachelor : Bsc in Mathematics </p>
+                    <p><i class="bi bi-diagram-2-fill"></i> University/College : Uttara University </p>
                     <p><i class="bi bi-diagram-2-fill"></i> Special Subject : Math </p>
                     <p><i class="bi bi-geo-alt-fill"></i> Dhaka, Bangladesh</p>
                 </div>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
-                <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-                <h2>Syed Afridi Khan Bappy</h2>
-                <div class="text-white card-body rounded-3" style="background-color:darkblue">
-                    <p> <i class="bi bi-mortarboard-fill"></i> Bachelor : Bsc in Mathematics from Uttara University</p>
-                    <p><i class="bi bi-diagram-2-fill"></i> Special Subject : Math </p>
+                <div class="d-flex mb-2">
+                    <img class="rounded-circle" src="/TeachersImage/jannatul.jpeg" alt="Generic placeholder image" width="140" height="140">
+                    <h3 class="ms-2 align-content-center">Jannatul Ferdous</h3>
+                </div>
+
+                <div class="text-white card-body rounded-3 h-55" style="background-color:darkblue; height:200px">
+                    <p> <i class="bi bi-mortarboard-fill"></i> Masters : MA in literature </p>
+                    <p><i class="bi bi-diagram-2-fill"></i> University/College : Jagannath University </p>
+                    <p><i class="bi bi-diagram-2-fill"></i> Special Subject : English </p>
                     <p><i class="bi bi-geo-alt-fill"></i> Dhaka, Bangladesh</p>
 
                 </div>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
-                <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-                <h2>Syed Afridi Khan Bappy</h2>
-                <div class="text-white card-body rounded-3" style="background-color:darkblue">
-                    <p> <i class="bi bi-mortarboard-fill"></i> Bachelor : Bsc in Mathematics from Uttara University</p>
-                    <p><i class="bi bi-diagram-2-fill"></i> Special Subject : Math </p>
+                <div class="d-flex mb-2">
+                    <img class="rounded-circle" src="TeachersImage/Kader.jpeg" alt="Generic placeholder image" width="140" height="140">
+                    <h3 class="ms-2 align-content-center">
+                        Md. Abdul Kader
+                    </h3>
+                </div>
+
+                <div class="text-white card-body rounded-3 h-55" style="background-color:darkblue; height:200px">
+                    <p><i class="bi bi-mortarboard-fill"></i> Bachelor : Bsc in Textiles</p>
+                    <p><i class="bi bi-diagram-2-fill"></i> University/College : Bangladesh University of Textiles </p>
+                    <p><i class="bi bi-diagram-2-fill"></i> Special Subject : Physics </p>
+                    <p><i class="bi bi-geo-alt-fill"></i> Dhaka, Bangladesh</p>
+                </div>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4 mt-2">
+                <div class="d-flex mb-2">
+                    <img class="rounded-circle" src="TeachersImage/Ibrahim.jpg" alt="Generic placeholder image" width="140" height="140">
+                    <h3 class="ms-2 align-content-center">Md. Ibrahim Khalil</h3>
+                </div>
+
+                <div class="text-white card-body rounded-3" style="background-color:darkblue; height:200px">
+                    <p> <i class="bi bi-mortarboard-fill"></i> Bachelor : Bsc in Biology </p>
+                    <p><i class="bi bi-diagram-2-fill"></i> University/College : Dhaka Central University </p>
+                    <p><i class="bi bi-diagram-2-fill"></i> Special Subject : Biology </p>
                     <p><i class="bi bi-geo-alt-fill"></i> Dhaka, Bangladesh</p>
                 </div>
             </div><!-- /.col-lg-4 -->
@@ -92,15 +137,17 @@
     @* //Image Gallery Begin *@
     <div class="album py-5 bg-light mt-3">
         <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-heading text-uppercase fw-bold">Photo Gallary</h2>
 
+            </div>
             <div class="row">
                 <div class="col-md-4">
                     <div class="card mb-4 box-shadow">
-                        <img class="card-img-top" src="/AcademicImage/1.jpg"  alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" />
+                        <img class="card-img-top" src="/AcademicImage/1.jpg" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" />
                         <div class="card-body">
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                
                             </div>
                         </div>
                     </div>
@@ -110,7 +157,6 @@
                         <img class="card-img-top" src="/AcademicImage/9.jpg" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" />                        <div class="card-body">
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
-                               
                             </div>
                         </div>
                     </div>
@@ -120,7 +166,6 @@
                         <img class="card-img-top" src="/AcademicImage/10.jpg" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" />                        <div class="card-body">
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
-                               
                             </div>
                         </div>
                     </div>
@@ -131,7 +176,6 @@
                         <img class="card-img-top" src="/AcademicImage/11.jpg" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" />                        <div class="card-body">
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                
                             </div>
                         </div>
                     </div>
@@ -141,7 +185,6 @@
                         <img class="card-img-top" src="/AcademicImage/12.jpg" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" />                        <div class="card-body">
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                
                             </div>
                         </div>
                     </div>
@@ -151,7 +194,6 @@
                         <img class="card-img-top" src="/AcademicImage/14.jpg" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" />                        <div class="card-body">
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
-                               
                             </div>
                         </div>
                     </div>
@@ -162,7 +204,6 @@
                         <img class="card-img-top" src="/AcademicImage/3.jpg" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" />                        <div class="card-body">
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                
                             </div>
                         </div>
                     </div>
@@ -172,7 +213,6 @@
                         <img class="card-img-top" src="/AcademicImage/4.jpg" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" />                        <div class="card-body">
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                
                             </div>
                         </div>
                     </div>
@@ -182,7 +222,6 @@
                         <img class="card-img-top" src="/AcademicImage/6.jpg" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" />                        <div class="card-body">
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                
                             </div>
                         </div>
                     </div>
@@ -233,72 +272,72 @@
 
     </div>
     <!-- /END THE FEATURETTES -->
+    <hr class="featurette-divider">
 
+
+    <!-- /Start THE FooterSection -->
+    <div class="mt-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-heading text-uppercase">Contact Us</h2>
+                <h3 class="section-subheading text-muted">We are here to assist you. Reach us anytime!</h3>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <div class="card h-100 shadow border-0">
+                        <div class="card-header bg-blue text-center">
+                            <h3 class="m-0">Google Map Location</h3>
+                        </div>
+                        <div class="card-body p-0">
+                            <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3649.7647075516606!2d90.37111307511763!3d23.82696457861819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c1dfadd3a933%3A0xc58dd4b237b72084!2z4Kas4KeN4Kay4KeN4Kav4Ka-4KaV4Kas4KeL4Kaw4KeN4KahIOCmj-CmleCmvuCmoeCnh-CmruCmv-CmlSDgppzgpqjgp4c!5e0!3m2!1sbn!2sbd!4v1746872032514!5m2!1sbn!2sbd" width="615" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100 shadow border-0">
+                        <div class="card-header bg-blue text-center">
+                            <h3 class="m-0">Contact Information</h3>
+                        </div>
+                        <ul class="list-unstyled text-dark p-4">
+                            <li class="mb-3"><i class="bi bi-stopwatch-fill"></i> <strong>Opening Hours:</strong> Monday – Sunday (09:00 AM – 08:00 PM)</li>
+                            <li class="mb-3">
+                                <i class="bi bi-geo-alt-fill"></i> <strong>Address:</strong> 1B, House-3, Road-34, Block-D, Section-12, Mirpur, Pallabi, Dhaka-1216. 
+                            </li>
+                            <li class="mb-3"><i class="bi bi-telephone-fill"></i> <strong>Phone:</strong> +880 1999-812180</li>
+                            <li class="mb-3"><i class="bi bi-envelope-open-fill"></i> <strong>Email:</strong> info@basicacademy.com</li>
+                            <li><i class="bi bi-globe"></i> <strong>Website:</strong> <a href="#" class="text-primary text-decoration-underline">yoursite.com</a></li>
+                            
+                           
+                            
+                        </ul>
+                        <div class="text-center">
+                            <h5 class="">Connect With Us</h5>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /End THE FooterSection -->
 </div>
 
-@section Scripts{
+@section Scripts {
+
+    <!-- JS: Scroll to top -->
     <script>
-        function convertToBanglaDigits(number) {
-            const banglaDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
-            return number.toString().split('').map(d => banglaDigits[d] || d).join('');
+        function scrollToTop() {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-
-        function getBanglaDate(date) {
-            const banglaMonths = ["বৈশাখ", "জ্যৈষ্ঠ", "আষাঢ়", "শ্রাবণ", "ভাদ্র", "আশ্বিন", "কার্তিক", "অগ্রহায়ণ", "পৌষ", "মাঘ", "ফাল্গুন", "চৈত্র"];
-            const day = convertToBanglaDigits(date.getDate());
-            const month = banglaMonths[date.getMonth() % 12];
-            const year = convertToBanglaDigits(date.getFullYear());
-            return `বাংলা: ${day} ${month}, ${year}`;
-        }
-
-        function getEnglishDate(date) {
-            return `English: ${date.toLocaleDateString('en-US', {
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-                timeZone: 'Asia/Dhaka'
-            })}`;
-        }
-
-        function getEnglishTime(date) {
-            return `Time: ${date.toLocaleTimeString('en-US', { timeZone: 'Asia/Dhaka' })}`;
-        }
-
-        async function fetchHijriDate() {
-            try {
-                const response = await fetch("https://api.aladhan.com/v1/gToH?latitude=23.8103&longitude=90.4125&method=2&adjustment=0&timezonestring=Asia/Dhaka");
-                const data = await response.json();
-                const hijri = data.data.hijri;
-                return `Hijri: ${hijri.day} ${hijri.month.en}, ${hijri.year}`;
-            } catch (error) {
-                console.error("Hijri fetch error:", error);
-                return "Hijri: Error loading";
-            }
-        }
-
-        async function updateTicker() {
-            const now = new Date();
-            const bangla = getBanglaDate(now);
-            const eng = getEnglishDate(now);
-            const time = getEnglishTime(now);
-            const hijri = await fetchHijriDate();
-
-            const fullText = `${bangla} | ${eng} | ${hijri} | ${time}`;
-            document.getElementById('tickerContent').innerText = fullText;
-        }
-
-        document.addEventListener("DOMContentLoaded", function () {
-            updateTicker();
-            setInterval(updateTicker, 60000); // প্রতি ১ মিনিটে আপডেট
-        });
     </script>
-
 }
-  
 
- 
 
-   
+
+
+
 
 

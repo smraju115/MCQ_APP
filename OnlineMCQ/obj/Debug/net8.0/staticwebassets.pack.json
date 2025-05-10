@@ -65,6 +65,22 @@
       "PackagePath": "staticwebassets\\AcademicImage\\Logo\\2.png"
     },
     {
+      "Id": "D:\\OnlineMCQ\\OnlineMCQ\\wwwroot\\TeachersImage\\Bappy1.jpeg",
+      "PackagePath": "staticwebassets\\TeachersImage\\Bappy1.jpeg"
+    },
+    {
+      "Id": "D:\\OnlineMCQ\\OnlineMCQ\\wwwroot\\TeachersImage\\Ibrahim.jpg",
+      "PackagePath": "staticwebassets\\TeachersImage\\Ibrahim.jpg"
+    },
+    {
+      "Id": "D:\\OnlineMCQ\\OnlineMCQ\\wwwroot\\TeachersImage\\Kader.jpeg",
+      "PackagePath": "staticwebassets\\TeachersImage\\Kader.jpeg"
+    },
+    {
+      "Id": "D:\\OnlineMCQ\\OnlineMCQ\\wwwroot\\TeachersImage\\jannatul.jpeg",
+      "PackagePath": "staticwebassets\\TeachersImage\\jannatul.jpeg"
+    },
+    {
       "Id": "D:\\OnlineMCQ\\OnlineMCQ\\wwwroot\\bootstrap-icons\\bootstrap-icons.svg",
       "PackagePath": "staticwebassets\\bootstrap-icons\\bootstrap-icons.svg"
     },
