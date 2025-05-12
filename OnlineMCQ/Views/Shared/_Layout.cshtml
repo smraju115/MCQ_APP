@@ -47,7 +47,7 @@
         footer.footer {
             background-color: #001F54;
             color: white;
-            padding: 15px 0;
+           
         }
 
             footer.footer a {
@@ -63,13 +63,13 @@
 
     @await RenderSectionAsync("Styles", false)
 </head>
-<body>
+<body> 
     <header>
         <nav class="navbar navbar-expand-lg navbar-custom fixed-top shadow">
             <div class="container-fluid">
                 <a class="navbar-brand d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Index">
                     <img src="~/AcademicImage/Logo/2.png" alt="Logo" class="navbar-logo" />
-                    <span class="navbar-brand">Basic Academy</span>
+                    <span class="navbar-brand fw-bold">Basic Academy</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -77,36 +77,63 @@
                 </button>
                 <div class="collapse navbar-collapse" id="mainNav">
                     <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"> 
+                            <a class="nav-link fw-bolder" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                       
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link fw-bolder" href="/#teacher">Teachers</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="MCQ" asp-action="QuestionList">Question List</a>
+                            <a class="nav-link fw-bolder " href="/#gallery">Gallery</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="MCQ" asp-action="StartTest">Start Exam</a>
+                            <a class="nav-link fw-bolder " href="/#contact">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="MCQ" asp-action="AdminResults">Examer List</a>
+                            <a class="nav-link fw-bolder" asp-area="" asp-controller="MCQ" asp-action="QuestionList">Question List</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Admin" asp-action="AdminDashboard">Admin</a>
+                            <a class="nav-link fw-bolder " asp-area="" asp-controller="MCQ" asp-action="StartTest">Start Exam</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bolder" asp-area="" asp-controller="MCQ" asp-action="AdminResults">Examer List</a>
+                        </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link fw-bolder" asp-controller="Admin" asp-action="AdminDashboard">Admin Panel</a>
+                            </li>
+                            <li class="nav-item">
+                                <form asp-controller="Account" asp-action="Logout" method="post">
+                                    <button type="submit" class="nav-link btn btn-link fw-bolder text-white">Logout</button>
+                                </form>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link fw-bolder" asp-controller="Account" asp-action="Login">Admin</a>
+                            </li>
+                        }
+                        @* <li class="nav-item">
+                            <a class="nav-link fw-bolder" asp-area="" asp-controller="Admin" asp-action="AdminDashboard">Admin</a>
+                        </li> *@
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
 
-    <div class="container">
-        <main role="main" class="pb-3">
+    <div class="container-fluid" style="min-height:calc(100vh - 130px)">
+        <main class="container pb-3">
             @RenderBody()
         </main>
     </div>
 
     <footer class="footer mt-auto border-top text-center">
         <div class="container">
-            Copyright &copy; @DateTime.Now.Year  Basic Academy | All Rights Reserved. <strong class="float-end">Develop by S. M. Raju</strong>
+            Copyright &copy; @DateTime.Now.Year  Basic Academy | All Rights Reserved. <p class="float-end">Develop by S. M. Raju</p>
         </div>
     </footer>
 

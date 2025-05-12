@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using OnlineMCQ.Data;
@@ -7,6 +8,8 @@ using OnlineMCQ.ViewModels;
 
 namespace OnlineMCQ.Controllers
 {
+    [Authorize(Roles = "SuperAdmin, Admin")]
+
     public class MCQController : Controller
     {
         private readonly ApplicationDbContext _context;

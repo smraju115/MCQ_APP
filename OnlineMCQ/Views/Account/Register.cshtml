@@ -1,0 +1,19 @@
+﻿@model OnlineMCQ.ViewModels.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>Register</h1>
+
+<form asp-action="Register" method="post">
+    <input asp-for="Name" class="form-control" placeholder="Full Name" />
+    <input asp-for="Email" class="form-control" placeholder="Email" />
+    <input asp-for="Password" class="form-control" placeholder="Password" />
+    <select asp-for="Role" class="form-control">
+        <option value="Admin">Admin</option>
+        <option value="SuperAdmin">SuperAdmin</option>
+        <option value="User">User</option>
+    </select>
+    <button type="submit" class="btn btn-primary mt-3">Register</button>
+</form>

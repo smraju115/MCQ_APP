@@ -65,6 +65,14 @@
       "PackagePath": "staticwebassets\\AcademicImage\\Logo\\2.png"
     },
     {
+      "Id": "D:\\OnlineMCQ\\OnlineMCQ\\wwwroot\\AcademicImage\\easywritten.png",
+      "PackagePath": "staticwebassets\\AcademicImage\\easywritten.png"
+    },
+    {
+      "Id": "D:\\OnlineMCQ\\OnlineMCQ\\wwwroot\\AcademicImage\\uniqueExam.png",
+      "PackagePath": "staticwebassets\\AcademicImage\\uniqueExam.png"
+    },
+    {
       "Id": "D:\\OnlineMCQ\\OnlineMCQ\\wwwroot\\TeachersImage\\Bappy1.jpeg",
       "PackagePath": "staticwebassets\\TeachersImage\\Bappy1.jpeg"
     },

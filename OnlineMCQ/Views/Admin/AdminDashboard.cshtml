@@ -4,3 +4,10 @@
 }
 
 <h2>Welcome to Admin Dashboard</h2>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}

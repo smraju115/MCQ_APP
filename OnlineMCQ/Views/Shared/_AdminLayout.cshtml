@@ -33,7 +33,14 @@
                     <i class="bi bi-card-checklist me-2"></i>
                     <a class="sidebar-text text-white" asp-area="" asp-controller="MCQ" asp-action="AdminResults">Results</a>
                 </li>
-                
+            @if (User.Identity.IsAuthenticated)
+            {
+                <li class="nav-item d-flex align-items-center mb-2">
+                    <i class="bi bi-box-arrow-right me-2"></i>
+                    <a class="sidebar-text text-white" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
+
+                </li>
+            }
             </ul>
         </div>
 

@@ -4,29 +4,40 @@
 }
 
 
-<div class="container mt-5">
+<div class="container mt-5 mb-5">
     <div class="card shadow-lg rounded-4">
         <div class="card-body mt-5">
-            <h3 class="text-center text-primary mb-4">অনলাইন এমসিকিউ পরীক্ষা</h3>
+            <h3 class="text-center text-primary mb-4 fw-bold">Online MCQ Test</h3>
 
             <div id="step1">
-                <div class="mb-3">
-                    <label>আপনার নাম</label>
-                    <input type="text" id="name" class="form-control" required />
+                <div class="mb-3 row">
+                    <label class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm-4">
+                        <input type="text" id="name" class="form-control" required />
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label>মোবাইল নম্বর</label>
-                    <input type="text" id="contact" class="form-control" required />
+                <div class="mb-3 row">
+                    <label class="col-sm-2 col-form-label">Contact Number</label>
+                    <div class="col-sm-4">
+                        <input type="text" id="contact" class="form-control" required />
+
+                    </div>
                 </div>
-                <button class="btn btn-primary" onclick="goToStep2()">পরবর্তী</button>
-                <a asp-action="Index" asp-controller="Home" class="btn btn-dark">Back to Home</a>
+
+                <div class="mb-3">
+                    <button class="btn btn-primary" onclick="goToStep2()">Start Exam</button>
+                    <a asp-action="Index" asp-controller="Home" class="btn btn-dark">Back to Home</a>
+                </div>
+             
             </div>
 
             <form id="examForm" asp-action="SubmitTest" method="post" style="display:none;">
                 <input type="hidden" name="name" id="hiddenName" />
                 <input type="hidden" name="contact" id="hiddenContact" />
 
-                <div id="timer" class="text-danger fw-bold fs-5 text-end mb-3"></div>
+                <div id="timer" class="text-danger fw-bold fs-5 text-end mb-3">
+                    <i class="bi bi-clock-history me-1"></i><span id="timerText"></span>
+                </div>
 
                 @foreach (var question in Model.Questions)
                 {
@@ -51,8 +62,11 @@
                     </div>
                 }
 
-                <button type="submit" class="btn btn-success">পরীক্ষা জমা দিন</button>
-                <a asp-action="Index" asp-controller="Home" class="btn btn-dark">Back to Home</a>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <a asp-action="Index" asp-controller="Home" class="btn btn-dark">Back to Home</a>
+                </div>
+               
             </form>
         </div>
     </div>
@@ -69,7 +83,7 @@
             const contact = document.getElementById("contact").value;
 
             if (!name || !contact) {
-                alert("নাম ও মোবাইল নম্বর পূরণ করুন!");
+                alert("Please fill up the Name and Contact Number!");
                 return;
             }
 
@@ -82,17 +96,17 @@
         }
 
         function startTimer() {
-            const timerElement = document.getElementById("timer");
+            const timerText = document.getElementById("timerText");
 
             const countdown = setInterval(function () {
                 let minutes = Math.floor(timeLeft / 60);
                 let seconds = timeLeft % 60;
-                timerElement.innerText = `সময় বাকি: ${minutes}:${seconds.toString().padStart(2, '0')}`;
+                timerText.innerText = `Time Left: ${minutes}:${seconds.toString().padStart(2, '0')}`;
                 timeLeft--;
 
                 if (timeLeft < 0) {
                     clearInterval(countdown);
-                    alert("সময় শেষ! ফলাফল দেখা হচ্ছে।");
+                    alert("Time is up! Showing results.");
                     document.getElementById("examForm").submit();
                 }
             }, 1000);

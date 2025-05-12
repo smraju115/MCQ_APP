@@ -12,6 +12,8 @@ namespace OnlineMCQ.Data
         public DbSet<TestResult> TestResults { get; set; }
         public DbSet<ExamSetting> ExamSettings { get; set; }
 
-        
+        public DbSet<AppUser> Users { get; set; }
+
+
     }
 }
