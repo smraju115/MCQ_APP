@@ -11,7 +11,7 @@ namespace OnlineMCQ.Models
         public string Name { get; set; }
 
         [Required]
-        public string Contact { get; set; } // মোবাইল অথবা জন্ম তারিখ
+        public string Contact { get; set; } // 
 
         public DateTime TestDate { get; set; } = DateTime.Now;
     }

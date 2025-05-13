@@ -1,4 +1,4 @@
-html {
+﻿html {
   font-size: 14px;
 }
 
@@ -19,4 +19,17 @@ html {
 
 body {
   margin-bottom: 60px;
+}
+
+/*Carosel Image Design*/
+.carousel-item img {
+    height: 100vh; /* full screen height */
+    object-fit: cover; /* crop image properly */
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 300px; /* ছোট স্ক্রীনের জন্য কম হাইট */
+    }
 }

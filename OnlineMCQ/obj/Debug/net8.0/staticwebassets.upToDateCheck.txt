@@ -11,7 +11,9 @@ wwwroot\AcademicImage\6.jpg
 wwwroot\AcademicImage\7.jpg
 wwwroot\AcademicImage\8.jpg
 wwwroot\AcademicImage\9.jpg
+wwwroot\AcademicImage\draw2.jpg
 wwwroot\AcademicImage\easywritten.png
+wwwroot\AcademicImage\GroupPoster.jpg
 wwwroot\AcademicImage\Logo\13.jpg
 wwwroot\AcademicImage\Logo\2.png
 wwwroot\AcademicImage\uniqueExam.png

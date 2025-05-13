@@ -7,8 +7,8 @@ namespace OnlineMCQ.Models
         [Key]  // Primary Key
         public int QuestionId { get; set; }
 
-        [Required]  // এই প্রপার্টি ফাঁকা রাখা যাবে না
-        [StringLength(500)]  // প্রশ্নের জন্য সর্বোচ্চ 500 ক্যারেক্টার
+        [Required]  // 
+        [StringLength(500)]  //
         public string QuestionText { get; set; }
 
         [Required]
@@ -28,6 +28,6 @@ namespace OnlineMCQ.Models
         public string OptionD { get; set; }
 
         [Required]
-        public int CorrectAnswer { get; set; } // সঠিক উত্তর (1=A, 2=B, 3=C, 4=D)
+        public int CorrectAnswer { get; set; } // Correct Answer (1=A, 2=B, 3=C, 4=D)
     }
 }

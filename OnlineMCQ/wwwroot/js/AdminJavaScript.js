@@ -5,3 +5,18 @@
     sidebar.classList.toggle("sidebar-collapsed");
     content.classList.toggle("sidebar-collapsed");
 });
+
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+
+
+window.MathJax = {
+    tex: {
+        inlineMath: [['\\(', '\\)'], ['$', '$']]
+    },
+    svg: {
+        fontCache: 'global'
+    }
+};

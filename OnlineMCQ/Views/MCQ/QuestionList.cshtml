@@ -3,19 +3,37 @@
 @{
     ViewData["Title"] = "QuestionList";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int sl = 1;
 }
 
-<h2 class="text-center">All Questions</h2>
+<h2 class="text-center">All Question List</h2>
 
 <div class="mb-2">
     <a asp-action="CreateQuestion" class="btn btn-primary">Create New Question</a>
     <a asp-action="Index" asp-controller="MCQ" class="btn btn-info">Change Exam Time</a>
 </div>
 
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["SuccessMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
 
-<table class="table table-bordered">
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["Message"]
+       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+
+@* <table class="table table-bordered">
     <thead>
         <tr>
+            <th># SL</th>
             <th>Question</th>
             <th>Option A</th>
             <th>Option B</th>
@@ -28,6 +46,7 @@
         @foreach (var question in Model)
         {
             <tr>
+                <td>@(sl ++)</td>
                 <td>@question.QuestionText</td>
                 <td>@question.OptionA</td>
                 <td>@question.OptionB</td>
@@ -54,7 +73,67 @@
             </tr>
         }
     </tbody>
-</table>
+</table> *@
 
+<form asp-action="DeleteSelectedQuestions" method="post" onsubmit="return confirm('Are you sure you want to delete the selected questions?');">
+    <button type="submit" class="btn btn-danger mb-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><i class="bi bi-trash"></i></button>
 
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th><input type="checkbox" id="selectAll" /></th>
+                    <th># SL</th>
+                    <th>Question</th>
+                    <th>Option A</th>
+                    <th>Option B</th>
+                    <th>Option C</th>
+                    <th>Option D</th>
+                    <th>Correct Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var question in Model)
+                {
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="selectedQuestionIds" value="@question.QuestionId" class="select-item" />
+                        </td>
+                        <td>@(sl++)</td>
+                        <td>@Html.Raw(question.QuestionText)</td>
+                        <td>@Html.Raw(question.OptionA)</td>
+                        <td>@Html.Raw(question.OptionB)</td>
+                        <td>@Html.Raw(question.OptionC)</td>
+                        <td>@Html.Raw(question.OptionD)</td>
+                        <td>
+                            @(question.CorrectAnswer == 1 ? "A" :
+                                question.CorrectAnswer == 2 ? "B" :
+                                question.CorrectAnswer == 3 ? "C" : "D")
+                        </td>
 
+                        @* <td>
+                        <form asp-action="DeleteQuestion" method="post" onsubmit="return confirm('Are you sure you want to delete this question?');">
+                            <input type="hidden" name="id" value="@question.QuestionId" />
+                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                        </form>
+                    </td> *@
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    
+
+</form>
+
+@section Scripts {
+    <script>
+        document.getElementById("selectAll").addEventListener("change", function () {
+            var checkboxes = document.querySelectorAll(".select-item");
+            for (var checkbox of checkboxes) {
+                checkbox.checked = this.checked;
+            }
+        });
+    </script>
+}

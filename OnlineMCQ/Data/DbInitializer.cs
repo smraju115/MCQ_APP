@@ -9,7 +9,7 @@ namespace OnlineMCQ.Data
         {
             using var context = serviceProvider.GetRequiredService<ApplicationDbContext>();
 
-            // যদি কোন ইউজার না থাকে তাহলে SuperAdmin & Admin ইউজার ইনসার্ট করো
+            //
             if (!context.Users.Any())
             {
                 var passwordHasher = new PasswordHasher<AppUser>();
@@ -17,18 +17,18 @@ namespace OnlineMCQ.Data
                 var superAdmin = new AppUser
                 {
                     Name = "Super Admin",
-                    Email = "superadmin@example.com",
+                    Email = "superadmin@gmail.com",
                     Role = "SuperAdmin"
                 };
-                superAdmin.PasswordHash = passwordHasher.HashPassword(superAdmin, "123456");
+                superAdmin.PasswordHash = passwordHasher.HashPassword(superAdmin, "Superadmin@#$1234");
 
                 var admin = new AppUser
                 {
                     Name = "Admin",
-                    Email = "admin@example.com",
+                    Email = "admin@gmail.com",
                     Role = "Admin"
                 };
-                admin.PasswordHash = passwordHasher.HashPassword(admin, "123456");
+                admin.PasswordHash = passwordHasher.HashPassword(admin, "Admin@#$1234");
 
                 context.Users.AddRange(superAdmin, admin);
                 context.SaveChanges();

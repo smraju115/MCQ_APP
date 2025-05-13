@@ -66,14 +66,14 @@ namespace OnlineMCQ.Controllers
             var user = _context.Users.FirstOrDefault(u => u.Email == model.Email);
             if (user == null)
             {
-                ViewData["ErrorMessage"] = "Invalid email or password.";
+                ViewData["ErrorMessage"] = "Email is Invalid";
                 return View(model);
             }
 
             var result = _passwordHasher.VerifyHashedPassword(user, user.PasswordHash, model.Password);
             if (result == PasswordVerificationResult.Failed)
             {
-                ViewData["ErrorMessage"] = "Invalid email or password.";
+                ViewData["ErrorMessage"] = "Password is Invalid";
                 return View(model);
             }
 

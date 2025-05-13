@@ -9,7 +9,6 @@ using OnlineMCQ.ViewModels;
 namespace OnlineMCQ.Controllers
 {
     [Authorize(Roles = "SuperAdmin, Admin")]
-
     public class MCQController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -19,13 +18,11 @@ namespace OnlineMCQ.Controllers
             _context = context;
         }
 
-        // প্রশ্ন তৈরি করার জন্য GET Method
         public IActionResult CreateQuestion()
         {
             return View();
         }
 
-        // প্রশ্ন তৈরি করার জন্য POST Method
         [HttpPost]
         public IActionResult CreateQuestion(Question question)
         {
@@ -33,19 +30,56 @@ namespace OnlineMCQ.Controllers
             {
                 _context.Questions.Add(question);
                 _context.SaveChanges();
+                TempData["SuccessMessage"] = "Create Question Successfully.";
+
                 return RedirectToAction("QuestionList");
             }
             return View(question);
         }
 
-        // প্রশ্নের তালিকা দেখানোর জন্য
+        //Get All Questions
         public IActionResult QuestionList()
         {
             var questions = _context.Questions.ToList();
             return View(questions);
         }
 
-        // পরীক্ষার প্রশ্ন দেখানোর জন্য
+        //Delete Multiple Question
+        [HttpPost]
+        public IActionResult DeleteSelectedQuestions(int[] selectedQuestionIds)
+        {
+            if (selectedQuestionIds != null && selectedQuestionIds.Length > 0)
+            {
+                var questionsToDelete = _context.Questions
+                                                .Where(q => selectedQuestionIds.Contains(q.QuestionId))
+                                                .ToList();
+
+                _context.Questions.RemoveRange(questionsToDelete);
+                _context.SaveChanges();
+            }
+
+            TempData["Message"] = "Selected questions deleted successfully.";
+            return RedirectToAction("QuestionList");
+        }
+
+
+        //Optional: Individual Delete Method
+        //[HttpPost]
+        //public IActionResult DeleteQuestion(int id)
+        //{
+        //    var question = _context.Questions.Find(id);
+        //    if (question != null)
+        //    {
+        //        _context.Questions.Remove(question);
+        //        _context.SaveChanges();
+        //    }
+
+        //    return RedirectToAction("QuestionList");
+        //}
+
+
+
+        [AllowAnonymous]
         public IActionResult StartTest()
         {
             var questions = _context.Questions.OrderBy(q => Guid.NewGuid()).ToList();
@@ -61,11 +95,11 @@ namespace OnlineMCQ.Controllers
             return View(viewModel);
         }
 
-        // পরীক্ষার ফলাফল সংরক্ষণের জন্য
+        [AllowAnonymous]
         [HttpPost]
         public IActionResult SubmitTest(Dictionary<int, int> selectedAnswers, string name, string contact)
         {
-            // ইউজারের তথ্য সেভ করা
+            // Save User Information
             var userTest = new UserTest
             {
                 Name = name,
@@ -79,7 +113,7 @@ namespace OnlineMCQ.Controllers
             int totalQuestions = questions.Count;
             int correctAnswers = 0;
 
-            // ভুল প্রশ্ন সেভ করার জন্য লিস্ট
+            // Save for Only Wrong Answer
             List<Question> wrongQuestions = new List<Question>();
 
             foreach (var question in questions)
@@ -98,11 +132,11 @@ namespace OnlineMCQ.Controllers
                 }
                 else
                 {
-                    wrongQuestions.Add(question); // উত্তরই দেয়নি
+                    wrongQuestions.Add(question); 
                 }
             }
 
-            // পরীক্ষার ফলাফল সেভ করা
+            // Saving Exam Result
             var testResult = new TestResult
             {
                 UserTestId = userTest.Id,
@@ -115,15 +149,16 @@ namespace OnlineMCQ.Controllers
             _context.TestResults.Add(testResult);
             _context.SaveChanges();
 
-            // ভুল প্রশ্ন ও উত্তর TempData তে পাঠানো
+            // Wrong Question Store and Showing
             TempData["WrongQuestions"] = JsonConvert.SerializeObject(wrongQuestions);
             TempData["SelectedAnswers"] = JsonConvert.SerializeObject(selectedAnswers);
 
-            // ফলাফল দেখানোর পেজে রিডাইরেক্ট
+            
             return RedirectToAction("ViewResult", new { id = testResult.Id });
         }
 
-        // পরীক্ষার ফলাফল দেখানোর জন্য
+        [AllowAnonymous]
+        // Exam Result Showing
         public IActionResult ViewResult(int id)
         {
             var result = _context.TestResults.Include(tr => tr.UserTest).FirstOrDefault(tr => tr.Id == id);
@@ -131,7 +166,7 @@ namespace OnlineMCQ.Controllers
             return View(result);
         }
 
-        //  অ্যাডমিন প্যানেলে পরীক্ষার ফলাফল দেখানোর জন্য
+        // View For Admin Only Result
         public IActionResult AdminResults()
         {
             var results = _context.TestResults.Include(tr => tr.UserTest).ToList();
@@ -164,6 +199,8 @@ namespace OnlineMCQ.Controllers
             return View(model);
         }
 
+
+        
 
 
 

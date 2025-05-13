@@ -57,12 +57,20 @@
       "PackagePath": "staticwebassets\\AcademicImage\\9.jpg"
     },
     {
+      "Id": "D:\\OnlineMCQ\\OnlineMCQ\\wwwroot\\AcademicImage\\GroupPoster.jpg",
+      "PackagePath": "staticwebassets\\AcademicImage\\GroupPoster.jpg"
+    },
+    {
       "Id": "D:\\OnlineMCQ\\OnlineMCQ\\wwwroot\\AcademicImage\\Logo\\13.jpg",
       "PackagePath": "staticwebassets\\AcademicImage\\Logo\\13.jpg"
     },
     {
       "Id": "D:\\OnlineMCQ\\OnlineMCQ\\wwwroot\\AcademicImage\\Logo\\2.png",
       "PackagePath": "staticwebassets\\AcademicImage\\Logo\\2.png"
+    },
+    {
+      "Id": "D:\\OnlineMCQ\\OnlineMCQ\\wwwroot\\AcademicImage\\draw2.jpg",
+      "PackagePath": "staticwebassets\\AcademicImage\\draw2.jpg"
     },
     {
       "Id": "D:\\OnlineMCQ\\OnlineMCQ\\wwwroot\\AcademicImage\\easywritten.png",

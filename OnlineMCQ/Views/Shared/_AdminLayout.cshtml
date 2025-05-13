@@ -8,7 +8,8 @@
     <link href="~/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="~/mdb-ui-kit/mdb.min.css" rel="stylesheet" />
     <link href="~/css/adminstylesheet.css" rel="stylesheet" />
-   
+    @await RenderSectionAsync("Styles", false)
+
 </head>
 <body>
 
@@ -63,7 +64,7 @@
             <!-- Footer -->
             <footer class="footer py-3 bg-light text-center">
                 <div class="container">
-                    <span class="text-muted">© 2025 - Coaching System</span>
+                    <span class="text-muted">© 2025 - Basic Academic Coaching System</span>
                 </div>
             </footer>
         </div>
@@ -75,7 +76,9 @@
     <script src="~/mdb-ui-kit/mdb.umd.min.js"></script>
     <script src="~/mdb-ui-kit/mdb.es.min.js"></script>
     <script src="~/js/adminjavascript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+    @await RenderSectionAsync("Scripts", required: false)
 
     
 </body>

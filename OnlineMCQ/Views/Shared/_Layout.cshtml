@@ -69,36 +69,32 @@
             <div class="container-fluid">
                 <a class="navbar-brand d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Index">
                     <img src="~/AcademicImage/Logo/2.png" alt="Logo" class="navbar-logo" />
-                    <span class="navbar-brand fw-bold">Basic Academy</span>
+                    <span class="navbar-brand fw-bold">Basic Academic</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="mainNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"> 
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
                             <a class="nav-link fw-bolder" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                       
                         <li class="nav-item">
                             <a class="nav-link fw-bolder" href="/#teacher">Teachers</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-bolder " href="/#gallery">Gallery</a>
+                            <a class="nav-link fw-bolder" href="/#gallery">Gallery</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-bolder " href="/#contact">Contact</a>
+                            <a class="nav-link fw-bolder" href="/#contact">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-bolder" asp-area="" asp-controller="MCQ" asp-action="QuestionList">Question List</a>
+                            <a class="nav-link fw-bolder" asp-area="" asp-controller="MCQ" asp-action="StartTest">Start Exam</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw-bolder " asp-area="" asp-controller="MCQ" asp-action="StartTest">Start Exam</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw-bolder" asp-area="" asp-controller="MCQ" asp-action="AdminResults">Examer List</a>
-                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav ms-auto">
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
@@ -116,16 +112,13 @@
                                 <a class="nav-link fw-bolder" asp-controller="Account" asp-action="Login">Admin</a>
                             </li>
                         }
-                        @* <li class="nav-item">
-                            <a class="nav-link fw-bolder" asp-area="" asp-controller="Admin" asp-action="AdminDashboard">Admin</a>
-                        </li> *@
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
 
-    <div class="container-fluid" style="min-height:calc(100vh - 130px)">
+    <div class="container-fluid pt-5 mt-5">
         <main class="container pb-3">
             @RenderBody()
         </main>
@@ -140,6 +133,8 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
