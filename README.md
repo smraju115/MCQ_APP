@@ -72,7 +72,23 @@ A separate secured admin dashboard allows registered admins to manage the coachi
 Note: You can change this by updating seed data or using ASP.NET Identity UI.
 
 ## 📸 Screenshots:
+### 🏠 Homepage
+![Homepage](PrjoectDemoSS/Home.jpg)
 
+---
+
+### 📝 Quiz Page
+![Quiz Page](PrjoectDemoSS/Quizz Start.jpg)
+
+---
+
+### 📊 Admin Login Page
+![Login Page](PrjoectDemoSS/Login.jpg)
+
+---
+
+### 🛠️ Admin Dashboard
+![Admin Dashboard](PrjoectDemoSS/AdminDashboard.jpg)
 
 
 ## 📃 License
