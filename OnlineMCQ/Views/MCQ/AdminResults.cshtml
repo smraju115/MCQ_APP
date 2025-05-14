@@ -3,34 +3,112 @@
 @{
     ViewData["Title"] = "AdminResults";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int sl = ((int)ViewBag.CurrentPage - 1) * 10 + 1;
+
 }
 
-<h2>পরীক্ষার ফলাফল (অ্যাডমিন প্যানেল)</h2>
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["Message"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>নাম</th>
-            <th>যোগাযোগ</th>
-            <th>সঠিক উত্তর</th>
-            <th>ভুল উত্তর</th>
-            <th>তারিখ</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var result in Model)
+<div class="text-center">
+    <h2 class="fw-bold">Exam Result View</h2>
+
+</div>
+
+<form method="get" asp-action="AdminResults" class="d-flex flex-wrap align-items-center gap-2 mb-4">
+    <label for="fromDate" class="form-label mb-0">From Date </label>
+    <input type="date" class="form-control" name="fromDate" value="@ViewBag.FromDate" style="max-width: 180px;" />
+
+    <label for="toDate" class="form-label mb-0">To Date </label>
+    <input type="date" class="form-control" name="toDate" value="@ViewBag.ToDate" style="max-width: 180px;" />
+
+    <button type="submit" class="btn btn-primary">
+        <i class="bi bi-search"></i> Search
+    </button>
+
+    <a href="@Url.Action("AdminResults")" class="btn btn-info text-white">
+        <i class="bi bi-arrow-counterclockwise"></i> Reset
+    </a>
+</form>
+
+<form asp-action="DeleteSelectedResults" method="post" onsubmit="return confirm('Are you sure you want to delete the selected results?');">
+    <button type="submit" class="btn btn-danger mb-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><i class="bi bi-trash"></i></button>
+
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th><input type="checkbox" id="selectAll" /></th>
+                    <th># SL</th>
+                    <th>Name</th>
+                    <th>Contact</th>
+                    <th>Correct Answer</th>
+                    <th>Wrong Answer </th>
+                    <th>Exam Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var result in Model)
+                {
+                    @if (!Model.Any())
+                    {
+                        <tr>
+                            <td colspan="7" class="text-center text-danger">No results found for the selected date range.</td>
+                        </tr>
+                    }
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="selectedResultIds" value="@result.Id" class="select-item" />
+                        </td>
+                        <td>@(sl++)</td>
+                        <td>@result.UserTest.Name</td>
+                        <td>@result.UserTest.Contact</td>
+                        <td>@result.CorrectAnswers</td>
+                        <td>@result.WrongAnswers</td>
+                        <td>
+                            @result.SubmittedAt.ToString("dd-MM-yyyy hh:mm tt")
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+</form>
+
+<!-- Pagination -->
+<nav>
+    <ul class="pagination justify-content-center">
+        <li class="page-item @(ViewBag.CurrentPage == 1 ? "disabled" : "")">
+            <a class="page-link" href="@Url.Action("AdminResults", new { page = ViewBag.CurrentPage - 1, fromDate = ViewBag.FromDate, toDate = ViewBag.ToDate })">Previous</a>
+        </li>
+        @for (int i = 1; i <= ViewBag.TotalPages; i++)
         {
-            <tr>
-                <td>@result.Id</td>
-                <td>@result.UserTest.Name</td>
-                <td>@result.UserTest.Contact</td>
-                <td>@result.CorrectAnswers</td>
-                <td>@result.WrongAnswers</td>
-                <td>@result.SubmittedAt</td>
-            </tr>
+            <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                <a class="page-link" href="@Url.Action("AdminResults", new { page = i, fromDate = ViewBag.FromDate, toDate = ViewBag.ToDate })">@i</a>
+            </li>
         }
-    </tbody>
-</table>
+        <li class="page-item @(ViewBag.CurrentPage == ViewBag.TotalPages ? "disabled" : "")">
+            <a class="page-link" href="@Url.Action("AdminResults", new { page = ViewBag.CurrentPage + 1, fromDate = ViewBag.FromDate, toDate = ViewBag.ToDate })">Next</a>
+        </li>
+    </ul>
+</nav>
 
 
+@section Scripts {
+    <script>
+        document.getElementById("selectAll").addEventListener("change", function () {
+            var checkboxes = document.querySelectorAll(".select-item");
+            for (var checkbox of checkboxes) {
+                checkbox.checked = this.checked;
+            }
+        });
+    </script>
+}

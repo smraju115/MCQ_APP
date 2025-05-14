@@ -167,11 +167,50 @@ namespace OnlineMCQ.Controllers
         }
 
         // View For Admin Only Result
-        public IActionResult AdminResults()
+        public IActionResult AdminResults(int page = 1, DateTime? fromDate = null, DateTime? toDate = null)
         {
-            var results = _context.TestResults.Include(tr => tr.UserTest).ToList();
+            int pageSize = 10;
+            var query = _context.TestResults.Include(tr => tr.UserTest).AsQueryable();
+
+            // Date Filter
+            if (fromDate.HasValue && toDate.HasValue)
+            {
+                query = query.Where(x => x.SubmittedAt.Date >= fromDate.Value.Date && x.SubmittedAt.Date <= toDate.Value.Date);
+            }
+
+            int totalItems = query.Count();
+            var results = query
+                .OrderByDescending(r => r.SubmittedAt)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToList();
+
+            ViewBag.CurrentPage = page;
+            ViewBag.TotalPages = (int)Math.Ceiling(totalItems / (double)pageSize);
+            ViewBag.FromDate = fromDate?.ToString("yyyy-MM-dd");
+            ViewBag.ToDate = toDate?.ToString("yyyy-MM-dd");
+
             return View(results);
         }
+
+        //Delete Multiple Result
+        [HttpPost]
+        public IActionResult DeleteSelectedResults(int[] selectedResultIds)
+        {
+            if (selectedResultIds != null && selectedResultIds.Length > 0)
+            {
+                var resultsToDelete = _context.TestResults
+                                                .Where(r => selectedResultIds.Contains(r.Id))
+                                                .ToList();
+
+                _context.TestResults.RemoveRange(resultsToDelete);
+                _context.SaveChanges();
+            }
+
+            TempData["Message"] = "Selected result deleted successfully.";
+            return RedirectToAction("AdminResults");
+        }
+
 
 
         //ExamTimeChangeMethod

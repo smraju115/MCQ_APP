@@ -76,7 +76,7 @@
             <!-- Three columns of text below-->
             <div class="row">
                 <div class="text-center mb-5">
-                    <h2 class="section-heading text-uppercase fw-bold">Our Teachers</h2>
+                    <h2 class="section-heading text-uppercase fw-bold">Our <span class="text-primary">Teachers</span> </h2>
                     <h3 class="section-subheading text-muted">We are here to assist your child. Reach us anytime!</h3>
                 </div>
                 <div class="col-lg-4">
@@ -142,111 +142,141 @@
 
 
     <div class="text-center mt-5">
+        <h2 class="fw-bold text-dark display-6 mb-3">
+            “ অবাক করা <span class="text-primary"> সাফল্যগাঁথা </span> ”
+        </h2>
         <img src="/AcademicImage/GroupPoster.jpg" class="img-fluid rounded-3" alt="...">
     </div>
 
 
+    <!-- Photo Gallary Start -->
 
-    @* //Image Gallery Begin *@
-    <section class="" id="gallery">
-        <div class="album py-5 bg-light mt-3">
-            <div class="container">
-                <div class="text-center mb-5">
-                    <h2 class="section-heading text-uppercase fw-bold">Photo Gallary</h2>
+    <section id="gallery" class="bg-light py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-heading text-uppercase fw-bold">Photo <span class="text-primary">Gallery</span></h2>
+            </div>
+            <div class="row g-4">
+                <!-- Photo Card -->
+                <div class="col-md-4 col-sm-6" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage('/AcademicImage/1.jpg')">
+                    <div class="photo-card position-relative overflow-hidden rounded-3 shadow-sm">
+                        <img src="/AcademicImage/1.jpg" class="img-fluid" alt="Gallery Image">
+                        <div class="overlay d-flex justify-content-center align-items-center">
+                            <i class="bi bi-plus-square text-white fs-1"></i>
+                        </div>
+                        <div class="photo-caption">ছবির নাম বা বর্ণনা</div>
 
+                    </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src="/AcademicImage/1.jpg" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" />
-                            <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src="/AcademicImage/9.jpg" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" />                        <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src="/AcademicImage/10.jpg" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" />                        <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src="/AcademicImage/11.jpg" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" />                        <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                </div>
-                            </div>
+                <div class="col-md-4 col-sm-6" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage('/AcademicImage/9.jpg')">
+                    <div class="photo-card position-relative overflow-hidden rounded-3 shadow-sm">
+                        <img src="/AcademicImage/9.jpg" class="img-fluid" alt="Gallery Image">
+                        <div class="overlay d-flex justify-content-center align-items-center">
+                            <i class="bi bi-plus-square text-white fs-1"></i>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src="/AcademicImage/12.jpg" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" />                        <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src="/AcademicImage/14.jpg" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" />                        <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <div class="photo-caption">ছবির নাম বা বর্ণনা</div>
 
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src="/AcademicImage/3.jpg" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" />                        <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src="/AcademicImage/4.jpg" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" />                        <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                </div>
-                            </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage('/AcademicImage/10.jpg')">
+                    <div class="photo-card position-relative overflow-hidden rounded-3 shadow-sm">
+                        <img src="/AcademicImage/10.jpg" class="img-fluid" alt="Gallery Image">
+                        <div class="overlay d-flex justify-content-center align-items-center">
+                            <i class="bi bi-plus-square text-white fs-1"></i>
                         </div>
+                        <div class="photo-caption">ছবির নাম বা বর্ণনা</div>
+
                     </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src="/AcademicImage/6.jpg" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" />                        <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                </div>
-                            </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage('/AcademicImage/11.jpg')">
+                    <div class="photo-card position-relative overflow-hidden rounded-3 shadow-sm">
+                        <img src="/AcademicImage/11.jpg" class="img-fluid" alt="Gallery Image">
+                        <div class="overlay d-flex justify-content-center align-items-center">
+                            <i class="bi bi-plus-square text-white fs-1"></i>
                         </div>
+                        <div class="photo-caption">ছবির নাম বা বর্ণনা</div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage('/AcademicImage/12.jpg')">
+                    <div class="photo-card position-relative overflow-hidden rounded-3 shadow-sm">
+                        <img src="/AcademicImage/12.jpg" class="img-fluid" alt="Gallery Image">
+                        <div class="overlay d-flex justify-content-center align-items-center">
+                            <i class="bi bi-plus-square text-white fs-1"></i>
+                        </div>
+                        <div class="photo-caption">ছবির নাম বা বর্ণনা</div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage('/AcademicImage/14.jpg')">
+                    <div class="photo-card position-relative overflow-hidden rounded-3 shadow-sm">
+                        <img src="/AcademicImage/14.jpg" class="img-fluid" alt="Gallery Image">
+                        <div class="overlay d-flex justify-content-center align-items-center">
+                            <i class="bi bi-plus-square text-white fs-1"></i>
+                        </div>
+                        <div class="photo-caption">ছবির নাম বা বর্ণনা</div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage('/AcademicImage/3.jpg')">
+                    <div class="photo-card position-relative overflow-hidden rounded-3 shadow-sm">
+                        <img src="/AcademicImage/3.jpg" class="img-fluid" alt="Gallery Image">
+                        <div class="overlay d-flex justify-content-center align-items-center">
+                            <i class="bi bi-plus-square text-white fs-1"></i>
+                        </div>
+                        <div class="photo-caption">ছবির নাম বা বর্ণনা</div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage('/AcademicImage/4.jpg')">
+                    <div class="photo-card position-relative overflow-hidden rounded-3 shadow-sm">
+                        <img src="/AcademicImage/4.jpg" class="img-fluid" alt="Gallery Image">
+                        <div class="overlay d-flex justify-content-center align-items-center">
+                            <i class="bi bi-plus-square text-white fs-1"></i>
+                        </div>
+                        <div class="photo-caption">ছবির নাম বা বর্ণনা</div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage('/AcademicImage/6.jpg')">
+                    <div class="photo-card position-relative overflow-hidden rounded-3 shadow-sm">
+                        <img src="/AcademicImage/6.jpg" class="img-fluid" alt="Gallery Image">
+                        <div class="overlay d-flex justify-content-center align-items-center">
+                            <i class="bi bi-plus-square text-white fs-1"></i>
+                        </div>
+                        <div class="photo-caption">ছবির নাম বা বর্ণনা</div>
+
+                    </div>
+                </div>
+
+                <!-- Add more cards as needed... -->
+
+            </div>
+        </div>
+
+
+        <!-- Modal for Image View -->
+        <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content bg-dark border-0 position-relative">
+                    <button type="button" class="close-btn btn-danger" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+                    <div class="modal-body p-0">
+                        <img id="modalImage" src="" class="img-fluid w-100 rounded-2" />
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    
-    @* //Image Gallery End *@
 
+    </section>
+ <!-- Photo Gallary End -->
 
     <!-- START THE FEATURETTES -->
     <div class="container-marketing">
@@ -257,7 +287,7 @@
                 <h2 class="featurette-heading">যেমনই হোক পরিস্থিতি </h2>
                 <h1 class="text-primary">থেমে থাকবে না প্রস্তুতি</h1>
                 <p class="lead">নিজস্ব সফট্ওয়্যার টিমের সার্বক্ষণিক তত্ত্বাবধানে বেসিক একাডেমি এর রয়েছে দেশসেরা অনলাইন লার্নিং প্লাটফর্ম
-                    <a asp-action="StartTest" asp-controller="MCQ">(online.basic-academy.com)</a>।&nbsp; যেকোনো সরকারি বিধি-নিষেধের কারণে শিক্ষা প্রতিষ্ঠান বন্ধ থাকলে সকল কার্যক্রম অনলাইনে চলমান থাকবে। ফলে শিক্ষার্থীদের ধারাবাহিক প্রস্তুতিতে কোনো প্রকার বিঘ্ন ঘটবে না। ২০২২&nbsp;সালের বিভিন্ন ভর্তি পরীক্ষায় বেসিক একাডেমি এর শিক্ষার্থীদের ঈর্ষণীয় সাফল্যই তার উৎকৃষ্ট প্রমাণ ।</p>
+                    <a asp-action="StartTest" asp-controller="MCQ">(online.basic-academy.com)</a>।&nbsp; যেকোনো সরকারি বিধি-নিষেধের কারণে শিক্ষা প্রতিষ্ঠান বন্ধ থাকলে সকল কার্যক্রম অনলাইনে চলমান থাকবে । ফলে শিক্ষার্থীদের ধারাবাহিক প্রস্তুতিতে কোনো প্রকার বিঘ্ন ঘটবে না। <br /> ২০২২ সালের বিভিন্ন ভর্তি পরীক্ষায় বেসিক একাডেমি এর শিক্ষার্থীদের ঈর্ষণীয় সাফল্যই তার উৎকৃষ্ট প্রমাণ ।</p>
             </div> 
             <div class="col-md-5">
                 <img class="featurette-image img-fluid mx-auto" src="/AcademicImage/easywritten.png" alt="Generic placeholder image">
@@ -270,7 +300,7 @@
             <div class="col-md-7 order-md-2">
                 <h2 class="featurette-heading">সর্বোচ্চ কার্যকরী </h2>
                 <h1 class="text-primary">ইউনিক এক্সাম সিস্টেম</h1>
-                <p class="lead">বিশ্ববিদ্যালয় ভর্তি পরীক্ষা নতুন পদ্ধতিতে (প্রত্যেক পরীক্ষার্থীর জন্য ইউনিক প্রশ্নসেট) অনুষ্ঠিত হয় । যেখানে ৩/8 টি Master Set থেকে সফট্ওয়্যারের মাধ্যমে প্রত্যেক পরীক্ষার্থীর জন্য তৈরি করা হয় সমমান সম্পন্ন ইউনিক প্রশ্নসেট। তোমরা জেনে আনন্দিত হবে যে, বাংলাদেশে একমাত্র বেসিক একাডেমি-ই বিশ্ববিদ্যালয় ভর্তি পরীক্ষার অনুরূপ ইউনিক এক্সাম সিস্টেমে তাদের সকল পরীক্ষা নিয়ে থাকে । যে কারণে বিশ্ববিদ্যালয় ভর্তি পরীক্ষাগুলোতে&nbsp;&nbsp;বেসিকিয়ানদের সাফল্যের হারও ঈর্ষণীয়। তাই বিশ্ববিদ্যালয় ভর্তি পরীক্ষায় সফল হতে এবং নিজের প্রস্তুতির সঠিক অবস্থান জানতে "বেসিক একাডেমির ইউনিক এক্সাম সিস্টেম" এর কোনো বিকল্প নেই।</p>
+                <p class="lead">বিশ্ববিদ্যালয় ভর্তি পরীক্ষা নতুন পদ্ধতিতে (প্রত্যেক পরীক্ষার্থীর জন্য ইউনিক প্রশ্নসেট) অনুষ্ঠিত হয় । যেখানে ৩/8 টি Master Set থেকে সফট্ওয়্যারের মাধ্যমে প্রত্যেক পরীক্ষার্থীর জন্য তৈরি করা হয় সমমান সম্পন্ন ইউনিক প্রশ্নসেট। তোমরা জেনে আনন্দিত হবে যে, বাংলাদেশে একমাত্র বেসিক একাডেমি-ই বিশ্ববিদ্যালয় ভর্তি পরীক্ষার অনুরূপ ইউনিক এক্সাম সিস্টেমে তাদের সকল পরীক্ষা নিয়ে থাকে । <br /> যে কারণে বিশ্ববিদ্যালয় ভর্তি পরীক্ষাগুলোতে বেসিকিয়ানদের সাফল্যের হারও ঈর্ষণীয়। তাই বিশ্ববিদ্যালয় ভর্তি পরীক্ষায় সফল হতে এবং নিজের প্রস্তুতির সঠিক অবস্থান জানতে "বেসিক একাডেমির ইউনিক এক্সাম সিস্টেম" এর কোনো বিকল্প নেই।</p>
             </div>
             <div class="col-md-5 order-md-1">
                 <img class="featurette-image img-fluid mx-auto" src="/AcademicImage/uniqueExam.png" alt="Generic placeholder image">
@@ -341,6 +371,10 @@
     <script>
         function scrollToTop() {
           window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+             function showImage(src) {
+            document.getElementById('modalImage').src = src;
         }
     </script>
 }

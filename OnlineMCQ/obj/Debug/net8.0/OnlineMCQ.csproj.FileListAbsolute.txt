@@ -268,6 +268,7 @@ D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\OnlineMCQ.csproj.CoreCompileInputs.cache
 D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\OnlineMCQ.MvcApplicationPartsAssemblyInfo.cache
 D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\OnlineMCQ.RazorAssemblyInfo.cache
 D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\OnlineMCQ.RazorAssemblyInfo.cs
+D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\OnlineMCQ.sourcelink.json
 D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\scopedcss\bundle\OnlineMCQ.styles.css
 D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\scopedcss\projectbundle\OnlineMCQ.bundle.scp.css
@@ -280,11 +281,9 @@ D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\staticwebassets\msbuild.build.OnlineMCQ.
 D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.OnlineMCQ.props
 D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.OnlineMCQ.props
 D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\staticwebassets.pack.json
-D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\OnlineMCQ.csproj.Up2Date
 D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\OnlineMCQ.dll
 D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\refint\OnlineMCQ.dll
 D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\OnlineMCQ.pdb
 D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\OnlineMCQ.genruntimeconfig.cache
 D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\ref\OnlineMCQ.dll
-D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\OnlineMCQ.sourcelink.json
