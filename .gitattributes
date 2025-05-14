@@ -1,6 +1,16 @@
-# wwwroot বা css/js ফোল্ডার ভাষা গণনা থেকে বাদ দিতে
 wwwroot/* linguist-vendored
 assets/* linguist-vendored
-*.scss linguist-vendored
 *.css linguist-vendored
+*.scss linguist-vendored
 *.js linguist-vendored
+*.html linguist-vendored
+*.json linguist-vendored
+*.png linguist-vendored
+*.jpg linguist-vendored
+*.jpeg linguist-vendored
+*.gif linguist-vendored
+*.svg linguist-vendored
+
+*.cs linguist-detectable
+*.cshtml linguist-detectable
+*.razor linguist-detectable
