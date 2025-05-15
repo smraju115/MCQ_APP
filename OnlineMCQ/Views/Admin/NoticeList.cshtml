@@ -1,0 +1,80 @@
+﻿@model List<OnlineMCQ.Models.Notice>
+@using System.IO
+
+@{
+    ViewData["Title"] = "Notice List";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["SuccessMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+
+<h2>Notice List</h2>
+
+<a asp-action="CreateNotice" class="btn btn-primary mb-3">Create New</a>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>File</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var notice in Model)
+            {
+                string ext = "";
+                if (!string.IsNullOrEmpty(notice?.FilePath) && notice.FilePath.Contains('.'))
+                {
+                    ext = notice.FilePath.Substring(notice.FilePath.LastIndexOf('.')).ToLower();
+                }
+
+                string iconClass = ext switch
+                {
+                    ".pdf" => "bi bi-file-earmark-pdf text-danger",
+                    ".doc" or ".docx" => "bi bi-file-earmark-word text-primary",
+                    ".xls" or ".xlsx" => "bi bi-file-earmark-excel text-success",
+                    ".jpg" or ".jpeg" or ".png" => "bi bi-file-image text-warning",
+                    _ => "bi bi-file-earmark"
+                };
+
+                <tr>
+                    <td>
+                        @if (!string.IsNullOrEmpty(notice?.FilePath))
+                        {
+                            <a href="@notice.FilePath" target="_blank">@notice.Title</a>
+                        }
+                        else
+                        {
+                            @notice?.Title
+                        }
+                    </td>
+                    <td><i class="@iconClass fs-4"></i></td>
+                    <td>@notice?.CreatedAt.ToString("dd-MMM-yyyy")</td>
+                    <td>
+                        <a asp-action="DeleteNotice" asp-route-id="@notice?.Id" class="btn btn-danger btn-sm"
+                           onclick="return confirm('Are you sure?')">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-info">
+        <i class="bi bi-info-circle"></i> No notice available at the moment.
+    </div>
+}
+

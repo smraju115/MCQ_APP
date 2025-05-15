@@ -287,3 +287,4 @@ D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\refint\OnlineMCQ.dll
 D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\OnlineMCQ.pdb
 D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\OnlineMCQ.genruntimeconfig.cache
 D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\ref\OnlineMCQ.dll
+D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

@@ -13,6 +13,7 @@ namespace OnlineMCQ.Data
         public DbSet<ExamSetting> ExamSettings { get; set; }
 
         public DbSet<AppUser> Users { get; set; }
+        public DbSet<Notice> Notices { get; set; }
 
 
     }

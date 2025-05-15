@@ -9541,6 +9541,10 @@
       "PackagePath": "staticwebassets\\mdb-ui-kit\\scss\\mdb.free.scss"
     },
     {
+      "Id": "D:\\OnlineMCQ\\OnlineMCQ\\wwwroot\\uploads\\5f9d1019-28ea-4b97-8dd7-e8c6125e4c72.pdf",
+      "PackagePath": "staticwebassets\\uploads\\5f9d1019-28ea-4b97-8dd7-e8c6125e4c72.pdf"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.OnlineMCQ.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },

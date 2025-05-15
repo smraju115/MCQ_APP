@@ -1,0 +1,140 @@
+﻿@model List<OnlineMCQ.Models.Notice>
+@using System.IO
+
+@{
+    ViewData["Title"] = "Notice Board";
+    int sl = 1;
+}
+
+<h2 class="text-center my-3">Notice Board</h2>
+
+<div class="container pb-5">
+    <div class="row justify-content-end mb-3">
+        <div class="col-md-3 col-sm-12">
+            <div class="input-group">
+                <span class="input-group-text bg-primary text-white" id="search-label"><i class="bi bi-search"></i></span>
+                <input type="text" id="searchInput" onkeyup="filterTable()" class="form-control" placeholder="Search anything..." aria-label="Search" aria-describedby="search-label">
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered align-middle text-center" id="noticeTable">
+            <thead class="table-info">
+                <tr>
+                    <th class="col-sl">#</th>
+                    <th>Title</th>
+                    <th class="col-type">Type</th>
+                    <th class="col-date">Date</th>
+                    <th class="col-download">Download</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var notice in Model)
+                {
+                    string ext = "";
+                    if (!string.IsNullOrEmpty(notice.FilePath))
+                    {
+                        ext = notice.FilePath.Substring(notice.FilePath.LastIndexOf('.')).ToLower();
+                    }
+
+                    string iconClass = ext switch
+                    {
+                        ".pdf" => "bi bi-file-earmark-pdf text-danger",
+                        ".doc" or ".docx" => "bi bi-file-earmark-word text-primary",
+                        ".xls" or ".xlsx" => "bi bi-file-earmark-excel text-success",
+                        ".jpg" or ".jpeg" or ".png" => "bi bi-file-image text-warning",
+                        _ => "bi bi-file-earmark"
+                    };
+                    <tr>
+                        <td>@(sl ++)</td>
+                        <td>@notice.Title</td>
+                        <td><i class="@iconClass fs-4"></i></td>
+                        <td>@notice.CreatedAt.ToString("dd MMM yyyy")</td>
+                        <td>
+                            <a href="@notice.FilePath" download class="btn btn-outline-primary btn-sm">
+                                <i class="bi bi-download"></i> Download
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Pagination -->
+    <nav class="d-flex justify-content-center mt-2 mb-5">
+        <ul class="pagination flex-wrap justify-content-center" id="pagination"></ul>
+    </nav>
+</div>
+
+@section Scripts {
+<script>
+    const rowsPerPage = 5;
+    let currentPage = 1;
+    let rows = [];
+    let filteredRows = [];
+
+    window.onload = () => {
+        const tbody = document.querySelector("#noticeTable tbody");
+        rows = Array.from(tbody.querySelectorAll("tr"));
+        filteredRows = [...rows];
+        renderTable();
+        renderPagination();
+    };
+
+    function filterTable() {
+        const term = document.getElementById("searchInput").value.toLowerCase();
+        filteredRows = rows.filter(row => {
+            return Array.from(row.cells).some(cell =>
+                cell.textContent.toLowerCase().includes(term)
+            );
+        });
+        currentPage = 1;
+        renderTable();
+        renderPagination();
+    }
+
+    function renderTable() {
+        const tbody = document.querySelector("#noticeTable tbody");
+        tbody.innerHTML = "";
+
+        const start = (currentPage - 1) * rowsPerPage;
+        const paginatedRows = filteredRows.slice(start, start + rowsPerPage);
+
+        paginatedRows.forEach(row => tbody.appendChild(row));
+    }
+
+    function renderPagination() {
+        const pageCount = Math.ceil(filteredRows.length / rowsPerPage);
+        const pagination = document.getElementById("pagination");
+        pagination.innerHTML = "";
+
+        const prev = document.createElement("li");
+        prev.className = "page-item" + (currentPage === 1 ? " disabled" : "");
+        prev.innerHTML = `<a class="page-link" href="#" onclick="changePage(${currentPage - 1})">Previous</a>`;
+        pagination.appendChild(prev);
+
+        for (let i = 1; i <= pageCount; i++) {
+            const li = document.createElement("li");
+            li.className = "page-item" + (i === currentPage ? " active" : "");
+            li.innerHTML = `<a class="page-link" href="#" onclick="changePage(${i})">${i}</a>`;
+            pagination.appendChild(li);
+        }
+
+        const next = document.createElement("li");
+        next.className = "page-item" + (currentPage === pageCount ? " disabled" : "");
+        next.innerHTML = `<a class="page-link" href="#" onclick="changePage(${currentPage + 1})">Next</a>`;
+        pagination.appendChild(next);
+    }
+
+    function changePage(page) {
+        const pageCount = Math.ceil(filteredRows.length / rowsPerPage);
+        if (page >= 1 && page <= pageCount) {
+            currentPage = page;
+            renderTable();
+            renderPagination();
+        }
+    }
+</script>
+}
