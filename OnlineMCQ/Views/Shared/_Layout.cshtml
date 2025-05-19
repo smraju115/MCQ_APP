@@ -13,54 +13,6 @@
     <link rel="icon" type="image/x-icon" href="~/favicon.ico" />
 
 
-    <style>
-        /* Navbar Styling */
-        .navbar-custom {
-            background-color: #001F54;
-        }
-
-            .navbar-custom .navbar-brand,
-            .navbar-custom .nav-link {
-                color: white;
-                transition: color 0.3s ease;
-              }
-
-                .navbar-custom .nav-link:hover,
-                .navbar-custom .navbar-brand:hover {
-                    color: #FFD700;
-                }
-
-        .navbar-toggler {
-            border-color: rgba(255, 255, 255, 0.3);
-        }
-
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba%28255, 255, 255, 0.7%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-        }
-
-        .navbar-logo {
-            height: 40px;
-            margin-right: 5px;
-            
-        }
-
-        footer.footer {
-            background-color: #001F54;
-            color: white;
-           
-        }
-
-            footer.footer a {
-                color: #FFD700;
-                text-decoration: none;
-            }
-
-                footer.footer a:hover {
-                    text-decoration: underline;
-                }
-
-    </style>
-
     @await RenderSectionAsync("Styles", false)
 </head>
 <body> 
@@ -130,11 +82,7 @@
         </main>
     </div>
 
-    <footer class="footer mt-auto border-top text-center">
-        <div class="container">
-            Copyright &copy; @DateTime.Now.Year  Basic Academic Coaching | All Rights Reserved. <p class="float-end">Develop by S. M. Raju</p>
-        </div>
-    </footer>
+
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

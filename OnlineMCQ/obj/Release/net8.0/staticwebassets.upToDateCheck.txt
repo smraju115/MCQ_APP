@@ -2382,3 +2382,4 @@ wwwroot\TeachersImage\Bappy1.jpeg
 wwwroot\TeachersImage\Ibrahim.jpg
 wwwroot\TeachersImage\jannatul.jpeg
 wwwroot\TeachersImage\Kader.jpeg
+wwwroot\uploads\5f9d1019-28ea-4b97-8dd7-e8c6125e4c72.pdf

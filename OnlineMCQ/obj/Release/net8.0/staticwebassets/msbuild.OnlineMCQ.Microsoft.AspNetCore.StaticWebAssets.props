@@ -37398,8 +37398,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>7r8i1r3pr4</Fingerprint>
-      <Integrity>LabdS69LPP/ytatIAv2YxhKYBI0WyzWCG5aARFuCfKo=</Integrity>
+      <Fingerprint>wtmtt2gfkh</Fingerprint>
+      <Integrity>LKI/VY+cPiHi/MzeQK5mkTfLZdV/WTEcDglI9K7gsuU=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</OriginalItemSpec>
@@ -42929,6 +42929,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\TeachersImage\Kader.jpeg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\5f9d1019-28ea-4b97-8dd7-e8c6125e4c72.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>OnlineMCQ</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/OnlineMCQ</BasePath>
+      <RelativePath>uploads/5f9d1019-28ea-4b97-8dd7-e8c6125e4c72.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>2vkutuye5d</Fingerprint>
+      <Integrity>Hto804QyG2xmkS5HFX9IRHO3D/hHZt3E1SnSrHi+POY=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\5f9d1019-28ea-4b97-8dd7-e8c6125e4c72.pdf'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

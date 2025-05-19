@@ -94,3 +94,27 @@ body {
     cursor: pointer;
     z-index: 1000;
 }
+
+/*Notice table Public Design*/
+.col-type {
+    width: 80px;
+    min-width: 80px;
+    max-width: 80px;
+}
+
+.col-date {
+    width: 120px;
+    min-width: 120px;
+    max-width: 120px;
+}
+
+.col-download {
+    width: 130px;
+    min-width: 130px;
+    max-width: 130px;
+}
+.col-sl {
+    width: 80px;
+    min-width: 80px;
+    max-width: 80px;
+}

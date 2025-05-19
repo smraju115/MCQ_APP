@@ -281,10 +281,10 @@ D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\staticwebassets\msbuild.build.OnlineMCQ.
 D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.OnlineMCQ.props
 D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.OnlineMCQ.props
 D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\staticwebassets.pack.json
+D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\OnlineMCQ.csproj.Up2Date
 D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\OnlineMCQ.dll
 D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\refint\OnlineMCQ.dll
 D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\OnlineMCQ.pdb
 D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\OnlineMCQ.genruntimeconfig.cache
 D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\ref\OnlineMCQ.dll
-D:\OnlineMCQ\OnlineMCQ\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
