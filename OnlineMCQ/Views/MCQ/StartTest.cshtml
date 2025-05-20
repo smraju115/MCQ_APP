@@ -32,6 +32,8 @@
             </div>
 
             <form id="examForm" asp-action="SubmitTest" method="post" style="display:none;">
+                @Html.AntiForgeryToken() @* //CSRF *@
+
                 <input type="hidden" name="name" id="hiddenName" />
                 <input type="hidden" name="contact" id="hiddenContact" />
 

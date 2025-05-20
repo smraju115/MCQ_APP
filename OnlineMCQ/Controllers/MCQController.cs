@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using OnlineMCQ.Data;
@@ -9,6 +10,8 @@ using OnlineMCQ.ViewModels;
 namespace OnlineMCQ.Controllers
 {
     [Authorize(Roles = "SuperAdmin, Admin")]
+    [EnableRateLimiting("ExamLimiter")]
+
     public class MCQController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -97,6 +100,7 @@ namespace OnlineMCQ.Controllers
 
         [AllowAnonymous]
         [HttpPost]
+        [ValidateAntiForgeryToken] //CSRF
         public IActionResult SubmitTest(Dictionary<int, int> selectedAnswers, string name, string contact)
         {
             // Save User Information
@@ -166,7 +170,7 @@ namespace OnlineMCQ.Controllers
             return View(result);
         }
 
-        // View For Admin Only Result
+        // View Result For Admin Only 
         public IActionResult AdminResults(int page = 1, DateTime? fromDate = null, DateTime? toDate = null)
         {
             int pageSize = 10;

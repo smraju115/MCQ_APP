@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OnlineMCQ")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+04189f93578f66d53f91cb4f50de69d66b962a0b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3532b6d9b0f4d914276e2e22ffacb2f71e80ae9c")]
 [assembly: System.Reflection.AssemblyProductAttribute("OnlineMCQ")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OnlineMCQ")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

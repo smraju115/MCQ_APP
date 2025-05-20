@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "D:\\MCQ_APP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2DBA5B1F-BD97-4790-989B-4801A8CDA297}|OnlineMCQ\\OnlineMCQ.csproj|d:\\mcq_app\\onlinemcq\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{2DBA5B1F-BD97-4790-989B-4801A8CDA297}|OnlineMCQ\\OnlineMCQ.csproj|solutionrelative:onlinemcq\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{2DBA5B1F-BD97-4790-989B-4801A8CDA297}|OnlineMCQ\\OnlineMCQ.csproj|d:\\mcq_app\\onlinemcq\\views\\mcq\\starttest.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2DBA5B1F-BD97-4790-989B-4801A8CDA297}|OnlineMCQ\\OnlineMCQ.csproj|solutionrelative:onlinemcq\\views\\mcq\\starttest.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DBA5B1F-BD97-4790-989B-4801A8CDA297}|OnlineMCQ\\OnlineMCQ.csproj|d:\\mcq_app\\onlinemcq\\controllers\\mcqcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DBA5B1F-BD97-4790-989B-4801A8CDA297}|OnlineMCQ\\OnlineMCQ.csproj|solutionrelative:onlinemcq\\controllers\\mcqcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DBA5B1F-BD97-4790-989B-4801A8CDA297}|OnlineMCQ\\OnlineMCQ.csproj|d:\\mcq_app\\onlinemcq\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DBA5B1F-BD97-4790-989B-4801A8CDA297}|OnlineMCQ\\OnlineMCQ.csproj|solutionrelative:onlinemcq\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DBA5B1F-BD97-4790-989B-4801A8CDA297}|OnlineMCQ\\OnlineMCQ.csproj|d:\\mcq_app\\onlinemcq\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DBA5B1F-BD97-4790-989B-4801A8CDA297}|OnlineMCQ\\OnlineMCQ.csproj|solutionrelative:onlinemcq\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2DBA5B1F-BD97-4790-989B-4801A8CDA297}|OnlineMCQ\\OnlineMCQ.csproj|d:\\mcq_app\\onlinemcq\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -19,10 +31,6 @@
       "RelativeMoniker": "D:0:0:{2DBA5B1F-BD97-4790-989B-4801A8CDA297}|OnlineMCQ\\OnlineMCQ.csproj|solutionrelative:onlinemcq\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2DBA5B1F-BD97-4790-989B-4801A8CDA297}|OnlineMCQ\\OnlineMCQ.csproj|d:\\mcq_app\\onlinemcq\\views\\mcq\\starttest.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2DBA5B1F-BD97-4790-989B-4801A8CDA297}|OnlineMCQ\\OnlineMCQ.csproj|solutionrelative:onlinemcq\\views\\mcq\\starttest.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2DBA5B1F-BD97-4790-989B-4801A8CDA297}|OnlineMCQ\\OnlineMCQ.csproj|d:\\mcq_app\\onlinemcq\\wwwroot\\css\\toptimestyle.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{2DBA5B1F-BD97-4790-989B-4801A8CDA297}|OnlineMCQ\\OnlineMCQ.csproj|solutionrelative:onlinemcq\\wwwroot\\css\\toptimestyle.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
@@ -31,16 +39,8 @@
       "RelativeMoniker": "D:0:0:{2DBA5B1F-BD97-4790-989B-4801A8CDA297}|OnlineMCQ\\OnlineMCQ.csproj|solutionrelative:onlinemcq\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2DBA5B1F-BD97-4790-989B-4801A8CDA297}|OnlineMCQ\\OnlineMCQ.csproj|d:\\mcq_app\\onlinemcq\\controllers\\mcqcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DBA5B1F-BD97-4790-989B-4801A8CDA297}|OnlineMCQ\\OnlineMCQ.csproj|solutionrelative:onlinemcq\\controllers\\mcqcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2DBA5B1F-BD97-4790-989B-4801A8CDA297}|OnlineMCQ\\OnlineMCQ.csproj|d:\\mcq_app\\onlinemcq\\views\\notice\\publicnotices.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2DBA5B1F-BD97-4790-989B-4801A8CDA297}|OnlineMCQ\\OnlineMCQ.csproj|solutionrelative:onlinemcq\\views\\notice\\publicnotices.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DBA5B1F-BD97-4790-989B-4801A8CDA297}|OnlineMCQ\\OnlineMCQ.csproj|d:\\mcq_app\\onlinemcq\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DBA5B1F-BD97-4790-989B-4801A8CDA297}|OnlineMCQ\\OnlineMCQ.csproj|solutionrelative:onlinemcq\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2DBA5B1F-BD97-4790-989B-4801A8CDA297}|OnlineMCQ\\OnlineMCQ.csproj|d:\\mcq_app\\onlinemcq\\controllers\\noticecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -78,7 +78,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -86,40 +86,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "site.css",
-              "DocumentMoniker": "D:\\MCQ_APP\\OnlineMCQ\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "OnlineMCQ\\wwwroot\\css\\site.css",
-              "ToolTip": "D:\\MCQ_APP\\OnlineMCQ\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "OnlineMCQ\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAAH4AAAAAAAAAAAAAAJcAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-05-19T09:49:39.214Z",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\MCQ_APP\\OnlineMCQ\\Program.cs",
+              "RelativeDocumentMoniker": "OnlineMCQ\\Program.cs",
+              "ToolTip": "D:\\MCQ_APP\\OnlineMCQ\\Program.cs",
+              "RelativeToolTip": "OnlineMCQ\\Program.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAADQAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T05:33:46.122Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "MCQController.cs",
               "DocumentMoniker": "D:\\MCQ_APP\\OnlineMCQ\\Controllers\\MCQController.cs",
               "RelativeDocumentMoniker": "OnlineMCQ\\Controllers\\MCQController.cs",
               "ToolTip": "D:\\MCQ_APP\\OnlineMCQ\\Controllers\\MCQController.cs",
               "RelativeToolTip": "OnlineMCQ\\Controllers\\MCQController.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAgwCgAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAowFUAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T04:45:16.741Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "PublicNotices.cshtml",
-              "DocumentMoniker": "D:\\MCQ_APP\\OnlineMCQ\\Views\\Notice\\PublicNotices.cshtml",
-              "RelativeDocumentMoniker": "OnlineMCQ\\Views\\Notice\\PublicNotices.cshtml",
-              "ToolTip": "D:\\MCQ_APP\\OnlineMCQ\\Views\\Notice\\PublicNotices.cshtml",
-              "RelativeToolTip": "OnlineMCQ\\Views\\Notice\\PublicNotices.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABgAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-15T04:35:21.767Z"
+              "WhenOpened": "2025-05-15T04:45:16.741Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -171,7 +160,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\MCQ_APP\\OnlineMCQ\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "OnlineMCQ\\Views\\Shared\\_Layout.cshtml",
@@ -179,12 +168,11 @@
               "RelativeToolTip": "OnlineMCQ\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAEsAAAAAAAAAAAAcwFwAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-14T09:17:39.534Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-14T09:17:39.534Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\MCQ_APP\\OnlineMCQ\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "OnlineMCQ\\Views\\Home\\Index.cshtml",
@@ -192,12 +180,11 @@
               "RelativeToolTip": "OnlineMCQ\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAGIBAAAAAAAAAAAUwG4BAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-14T09:18:24.558Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-14T09:18:24.558Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\MCQ_APP\\OnlineMCQ\\appsettings.json",
               "RelativeDocumentMoniker": "OnlineMCQ\\appsettings.json",
@@ -205,24 +192,49 @@
               "RelativeToolTip": "OnlineMCQ\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-14T10:03:26.571Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-14T10:03:26.571Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "StartTest.cshtml",
               "DocumentMoniker": "D:\\MCQ_APP\\OnlineMCQ\\Views\\MCQ\\StartTest.cshtml",
               "RelativeDocumentMoniker": "OnlineMCQ\\Views\\MCQ\\StartTest.cshtml",
               "ToolTip": "D:\\MCQ_APP\\OnlineMCQ\\Views\\MCQ\\StartTest.cshtml",
               "RelativeToolTip": "OnlineMCQ\\Views\\MCQ\\StartTest.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABcAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-19T10:30:18.381Z"
+              "WhenOpened": "2025-05-19T10:30:18.381Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\MCQ_APP\\OnlineMCQ\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "OnlineMCQ\\Controllers\\AdminController.cs",
+              "ToolTip": "D:\\MCQ_APP\\OnlineMCQ\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "OnlineMCQ\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAI8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T04:09:49.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "PublicNotices.cshtml",
+              "DocumentMoniker": "D:\\MCQ_APP\\OnlineMCQ\\Views\\Notice\\PublicNotices.cshtml",
+              "RelativeDocumentMoniker": "OnlineMCQ\\Views\\Notice\\PublicNotices.cshtml",
+              "ToolTip": "D:\\MCQ_APP\\OnlineMCQ\\Views\\Notice\\PublicNotices.cshtml",
+              "RelativeToolTip": "OnlineMCQ\\Views\\Notice\\PublicNotices.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABgAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-15T04:35:21.767Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "topTimeStyle.css",
               "DocumentMoniker": "D:\\MCQ_APP\\OnlineMCQ\\wwwroot\\css\\topTimeStyle.css",
               "RelativeDocumentMoniker": "OnlineMCQ\\wwwroot\\css\\topTimeStyle.css",
@@ -246,7 +258,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "AccountController.cs",
               "DocumentMoniker": "D:\\MCQ_APP\\OnlineMCQ\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "OnlineMCQ\\Controllers\\AccountController.cs",
@@ -255,18 +267,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-15T06:50:31.92Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "D:\\MCQ_APP\\OnlineMCQ\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "OnlineMCQ\\Controllers\\AdminController.cs",
-              "ToolTip": "D:\\MCQ_APP\\OnlineMCQ\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "OnlineMCQ\\Controllers\\AdminController.cs",
-              "ViewState": "AgIAAHkAAAAAAAAAAAAcwI8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T04:09:49.568Z"
             },
             {
               "$type": "Document",
