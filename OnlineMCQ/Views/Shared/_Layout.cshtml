@@ -82,7 +82,28 @@
         </main>
     </div>
 
-
+    @* Footer container এর বাইরে রাখুন *@
+    @if (Context.Request.Path == "/")
+    {
+        @* <footer class="footer mt-auto border-top text-center">
+            <div class="footer-container">
+                Copyright &copy; @DateTime.Now.Year Basic Academic Coaching | All Rights Reserved.
+                <p class="float-end">Develop by S. M. Raju</p>
+            </div>
+        </footer> *@
+        <footer class="py-4 mt-auto" style="background-color:#001F54">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="m-0 text-white">Copyright &copy; @DateTime.Now.Year Basic Academic Coaching | All Rights Reserved.</div></div>
+                    <div class="col-auto">
+                        <a class="text-white text-decoration-none" href="#!">Develop by S. M. Raju</a>
+                        <span class="text-white mx-1"></span>
+                        
+                    </div>
+                </div>
+            </div>
+        </footer>
+    }
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
