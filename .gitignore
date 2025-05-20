@@ -1,0 +1,57 @@
+## Ignore Visual Studio temporary files, build results, and
+## user-specific files
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Visual Studio
+.vs/
+.vscode/
+*.code-workspace
+
+# Visual Studio for Mac
+.idea/
+*.userprefs
+
+# Rider
+*.sln.iml
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Publish files
+wwwroot/
+dist/
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Logs
+*.log
+
+# Others
+_ReSharper*/
+*.ncrunch*
+*.localhistory/
+*.sln.ide
+*.DS_Store
+Thumbs.db
