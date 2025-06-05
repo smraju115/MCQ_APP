@@ -386,6 +386,8 @@ D:\MCQ_APP\OnlineMCQ\bin\Debug\net8.0\System.Security.Permissions.dll
 D:\MCQ_APP\OnlineMCQ\bin\Debug\net8.0\System.Text.Encodings.Web.dll
 D:\MCQ_APP\OnlineMCQ\bin\Debug\net8.0\System.Text.Json.dll
 D:\MCQ_APP\OnlineMCQ\bin\Debug\net8.0\System.Windows.Extensions.dll
+D:\MCQ_APP\OnlineMCQ\bin\Debug\net8.0\X.PagedList.dll
+D:\MCQ_APP\OnlineMCQ\bin\Debug\net8.0\X.PagedList.Mvc.Core.dll
 D:\MCQ_APP\OnlineMCQ\bin\Debug\net8.0\af\Humanizer.resources.dll
 D:\MCQ_APP\OnlineMCQ\bin\Debug\net8.0\ar\Humanizer.resources.dll
 D:\MCQ_APP\OnlineMCQ\bin\Debug\net8.0\az\Humanizer.resources.dll
@@ -555,6 +557,7 @@ D:\MCQ_APP\OnlineMCQ\obj\Debug\net8.0\OnlineMCQ.GeneratedMSBuildEditorConfig.edi
 D:\MCQ_APP\OnlineMCQ\obj\Debug\net8.0\OnlineMCQ.AssemblyInfoInputs.cache
 D:\MCQ_APP\OnlineMCQ\obj\Debug\net8.0\OnlineMCQ.AssemblyInfo.cs
 D:\MCQ_APP\OnlineMCQ\obj\Debug\net8.0\OnlineMCQ.csproj.CoreCompileInputs.cache
+D:\MCQ_APP\OnlineMCQ\obj\Debug\net8.0\OnlineMCQ.MvcApplicationPartsAssemblyInfo.cs
 D:\MCQ_APP\OnlineMCQ\obj\Debug\net8.0\OnlineMCQ.MvcApplicationPartsAssemblyInfo.cache
 D:\MCQ_APP\OnlineMCQ\obj\Debug\net8.0\OnlineMCQ.RazorAssemblyInfo.cache
 D:\MCQ_APP\OnlineMCQ\obj\Debug\net8.0\OnlineMCQ.RazorAssemblyInfo.cs
@@ -563,14 +566,9 @@ D:\MCQ_APP\OnlineMCQ\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.s
 D:\MCQ_APP\OnlineMCQ\obj\Debug\net8.0\scopedcss\bundle\OnlineMCQ.styles.css
 D:\MCQ_APP\OnlineMCQ\obj\Debug\net8.0\scopedcss\projectbundle\OnlineMCQ.bundle.scp.css
 D:\MCQ_APP\OnlineMCQ\obj\Debug\net8.0\staticwebassets.build.json
+D:\MCQ_APP\OnlineMCQ\obj\Debug\net8.0\staticwebassets.build.json.cache
 D:\MCQ_APP\OnlineMCQ\obj\Debug\net8.0\staticwebassets.development.json
 D:\MCQ_APP\OnlineMCQ\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-D:\MCQ_APP\OnlineMCQ\obj\Debug\net8.0\staticwebassets\msbuild.OnlineMCQ.Microsoft.AspNetCore.StaticWebAssets.props
-D:\MCQ_APP\OnlineMCQ\obj\Debug\net8.0\staticwebassets\msbuild.OnlineMCQ.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-D:\MCQ_APP\OnlineMCQ\obj\Debug\net8.0\staticwebassets\msbuild.build.OnlineMCQ.props
-D:\MCQ_APP\OnlineMCQ\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.OnlineMCQ.props
-D:\MCQ_APP\OnlineMCQ\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.OnlineMCQ.props
-D:\MCQ_APP\OnlineMCQ\obj\Debug\net8.0\staticwebassets.pack.json
 D:\MCQ_APP\OnlineMCQ\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\MCQ_APP\OnlineMCQ\obj\Debug\net8.0\OnlineMCQ.csproj.Up2Date
 D:\MCQ_APP\OnlineMCQ\obj\Debug\net8.0\OnlineMCQ.dll

@@ -1,0 +1,18 @@
+﻿@model List<OnlineMCQ.ViewModels.SubjectLevelComboViewModel>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3 mb-3">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4 class="card-title">Subject :  @item.SubjectName</h4>
+                    <p class="card-text">Class :  @item.LevelName</p>
+                    <a asp-action="StartTest" asp-route-subjectId="@item.SubjectId" asp-route-levelId="@item.LevelId" class="btn btn-primary">
+                        Start Test
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

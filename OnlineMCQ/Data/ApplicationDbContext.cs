@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OnlineMCQ.Models;
+using System.Security.Claims;
 
 namespace OnlineMCQ.Data
 {
@@ -15,6 +16,10 @@ namespace OnlineMCQ.Data
         public DbSet<AppUser> Users { get; set; }
         public DbSet<Notice> Notices { get; set; }
 
+        //new field
+        
+        public DbSet<Subject> Subjects { get; set; }
+        public DbSet<Level> Levels { get; set; }
 
     }
 }

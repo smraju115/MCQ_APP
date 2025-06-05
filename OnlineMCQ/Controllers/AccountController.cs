@@ -79,11 +79,11 @@ namespace OnlineMCQ.Controllers
 
             // Success Login
             var claims = new List<Claim>
-    {
-        new Claim(ClaimTypes.Name, user.Name),
-        new Claim(ClaimTypes.Email, user.Email),
-        new Claim(ClaimTypes.Role, user.Role)
-    };
+            {
+                new Claim(ClaimTypes.Name, user.Name),
+                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.Role, user.Role)
+            };
 
             var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
             var authProperties = new AuthenticationProperties

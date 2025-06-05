@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Security.Claims;
 
 namespace OnlineMCQ.Models
 {
@@ -29,5 +31,16 @@ namespace OnlineMCQ.Models
 
         [Required]
         public int CorrectAnswer { get; set; } // Correct Answer (1=A, 2=B, 3=C, 4=D)
+
+        // New Fields for module and level
+
+        [Required]
+        public int SubjectId { get; set; }
+        public Subject? Subject { get; set; }
+
+        [Required]
+        public int LevelId { get; set; }
+        public Level? Level { get; set; }
+
     }
 }

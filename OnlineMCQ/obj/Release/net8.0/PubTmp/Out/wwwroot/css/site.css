@@ -1,25 +1,17 @@
-﻿html {
-  font-size: 14px;
+﻿
+html, body {
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100%;
+    font-size: 14px;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
 
-body {
-  margin-bottom: 60px;
-}
 
 /*Carosel Image Design*/
 .carousel-item img {
@@ -28,11 +20,6 @@ body {
     width: 100%;
 }
 
-@media (max-width: 768px) {
-    .carousel-item img {
-        height: 300px; /* ছোট স্ক্রীনের জন্য কম হাইট */
-    }
-}
 
 
 /*Photo Gallary Design*/
@@ -118,3 +105,158 @@ body {
     min-width: 80px;
     max-width: 80px;
 }
+
+
+/* Navbar Styling */
+.navbar-custom {
+    background-color: #001F54;
+}
+
+    .navbar-custom .navbar-brand,
+    .navbar-custom .nav-link {
+        color: white;
+        transition: color 0.3s ease;
+    }
+
+        .navbar-custom .nav-link:hover,
+        .navbar-custom .navbar-brand:hover {
+            color: #FFD700;
+        }
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba%28255, 255, 255, 0.7%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-logo {
+    height: 40px;
+    margin-right: 5px;
+}
+
+/*footer.footer {
+    background-color: #001F54;
+    color: white;
+}
+
+    footer.footer a {
+        color: #FFD700;
+        text-decoration: none;
+    }
+
+        footer.footer a:hover {
+            text-decoration: underline;
+        }
+*/
+
+
+
+.floating-buttons {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+    .floating-buttons a,
+    .floating-buttons button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+
+        .floating-buttons a:hover,
+        .floating-buttons button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 10px rgba(0,0,0,0.2);
+        }
+
+/* WhatsApp Button Style */
+.whatsapp-btn {
+    background-color: #25D366; /* WhatsApp Green */
+}
+
+    .whatsapp-btn svg {
+        width: 28px;
+        height: 28px;
+        fill: white;
+    }
+
+/* Top Button Style */
+.top-btn {
+    background-color: #001F54; /* Navy Blue */
+}
+
+    .top-btn svg {
+        width: 26px;
+        height: 26px;
+        fill: white;
+    }
+
+
+
+
+
+
+@media (max-width: 480px) {
+    .carousel-item img {
+        height: 300px; /* ছোট স্ক্রীনের জন্য কম হাইট */
+    }
+    .navbar-toggler {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1052;
+        margin: 0;
+        padding: 0; /* add this */
+        width: 40px; /* fix width so that it doesn't expand */
+        height: 40px; /* fix height */
+    }
+
+    .navbar-collapse {
+        overflow-x: hidden; /* prevent collapse content overflow */
+    }
+
+    .floating-buttons {
+        position: fixed;
+        bottom: 5px;
+        right: 10px;
+        z-index: 1040;
+        gap: 10px;
+        flex-direction: column;
+        max-width: 55px; /* limit width */
+        overflow: hidden;
+    }
+
+        .floating-buttons a,
+        .floating-buttons button {
+            width: 45px;
+            height: 45px;
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+    .whatsapp-btn svg,
+    .top-btn svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    body, html {
+        overflow-x: hidden;
+    }
+}
+

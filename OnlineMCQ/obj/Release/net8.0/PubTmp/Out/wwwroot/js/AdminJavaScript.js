@@ -1,4 +1,5 @@
-﻿document.getElementById("toggleSidebar").addEventListener("click", function () {
+﻿
+document.getElementById("toggleSidebar").addEventListener("click", function () {
     const sidebar = document.getElementById("sidebar");
     const content = document.getElementById("content-area");
 
@@ -22,3 +23,13 @@ window.MathJax = {
         fontCache: 'global'
     }
 };
+
+// Auto Dismiss All Alerts with 'auto-dismiss-alert' class
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(function () {
+        document.querySelectorAll('.auto-dismiss-alert').forEach(function (alertEl) {
+            var alert = new bootstrap.Alert(alertEl);
+            alert.close();
+        });
+    }, 1000);
+});

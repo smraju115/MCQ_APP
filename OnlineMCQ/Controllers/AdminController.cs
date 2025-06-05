@@ -85,6 +85,7 @@ namespace OnlineMCQ.Controllers
             return View();
         }
 
+        //Create Notice 
         [HttpPost]
         public async Task<IActionResult> CreateNotice(Notice model, IFormFile file)
         {

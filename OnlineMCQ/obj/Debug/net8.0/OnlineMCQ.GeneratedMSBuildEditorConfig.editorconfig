@@ -76,8 +76,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUNRXFN0YXJ0VGVzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/MCQ_APP/OnlineMCQ/Views/MCQ/StartTestSelection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUNRXFN0YXJ0VGVzdFNlbGVjdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/MCQ_APP/OnlineMCQ/Views/MCQ/ViewResult.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUNRXFZpZXdSZXN1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MCQ_APP/OnlineMCQ/Views/MCQ/_QuestionTablePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUNRXF9RdWVzdGlvblRhYmxlUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/MCQ_APP/OnlineMCQ/Views/Notice/PublicNotices.cshtml]

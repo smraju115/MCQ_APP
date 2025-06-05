@@ -35,8 +35,30 @@
     </div>
     <div class="form-group">
         <label>Correct Answer (1 - 4)</label>
-        <input type="number" asp-for="CorrectAnswer" class="form-control" required min="1" max="4" />
+        @*  <input type="number" asp-for="CorrectAnswer" class="form-control" required min="1" max="4" /> *@
+            <select asp-for="CorrectAnswer" class="form-control">
+                <option value="1">A</option>
+                <option value="2">B</option>
+                <option value="3">C</option>
+                <option value="4">D</option>
+            </select>
+     </div>
+
+    <div class="form-group mb-2">
+        <label>Select Subject</label>
+        <select asp-for="SubjectId" class="form-control" asp-items="ViewBag.Modules">
+            <option value="">-- Select Subject --</option>
+        </select>
     </div>
+
+    <div class="form-group mb-3">
+        <label>Select Level</label>
+        <select asp-for="LevelId" class="form-control" asp-items="ViewBag.Classes">
+            <option value="">-- Select Level --</option>
+        </select>
+    </div>
+
+
     <div class="mt-2">
         <button type="submit" class="btn btn-primary">Save</button>
         <a asp-action="QuestionList" class="btn btn-dark">Back to List</a>

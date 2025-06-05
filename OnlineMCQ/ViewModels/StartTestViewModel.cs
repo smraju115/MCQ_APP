@@ -8,6 +8,8 @@ namespace OnlineMCQ.ViewModels
         public string Name { get; set; }
         public string Contact { get; set; }
         public int ExamDuration { get; set; }
+        public int SubjectId { get; set; }
+        public int LevelId { get; set; }
 
     }
 }

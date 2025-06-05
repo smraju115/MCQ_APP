@@ -1,0 +1,84 @@
+﻿@using X.PagedList.Mvc.Core
+@model X.PagedList.IPagedList<OnlineMCQ.Models.Question>
+
+
+@if (Model == null || !Model.Any())
+{
+    <div class="text-center text-danger fw-bold">No Data Found</div>
+}
+else
+{
+    <form asp-action="DeleteSelectedQuestions" method="post" onsubmit="return confirm('Are you sure you want to delete the selected questions?');">
+        <button type="submit" class="btn btn-danger mb-2"><i class="bi bi-trash"></i></button>
+        <div class="table-responsive">
+            <table class="table table-bordered" id="questionTable">
+                <thead>
+                    <tr>
+                        <th title="Select All"><input type="checkbox" id="selectAll" /></th>
+                        <th>#</th>
+                        <th>Question</th>
+                        <th>A</th>
+                        <th>B</th>
+                        <th>C</th>
+                        <th>D</th>
+                        <th>Correct</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (!Model.Any())
+                    {
+                        <tr>
+                            <td colspan="8" class="text-center text-warning fw-bold">No Questions Found for selected Subject & Level</td>
+                        </tr>
+                    }
+                    else{
+                        int sl = 1;
+                        @foreach (var q in Model)
+                        {
+                            <tr data-subject="@q.SubjectId" data-level="@q.LevelId">
+                                <td title="Select"><input type="checkbox" name="selectedQuestionIds" value="@q.QuestionId" class="select-item" /></td>
+                                <td>@(sl++)</td>
+                                <td>@Html.Raw(q.QuestionText)</td>
+                                <td>@Html.Raw(q.OptionA)</td>
+                                <td>@Html.Raw(q.OptionB)</td>
+                                <td>@Html.Raw(q.OptionC)</td>
+                                <td>@Html.Raw(q.OptionD)</td>
+                                <td>
+                                    @(q.CorrectAnswer == 1 ? "A" :
+                                                            q.CorrectAnswer == 2 ? "B" :
+                                                            q.CorrectAnswer == 3 ? "C" : "D")
+                    </td>
+                </tr>
+                                }
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination Section -->
+        <div class="d-flex justify-content-center mt-3">
+            <ul class="pagination">
+                @if (Model.HasPreviousPage)
+                {
+                    <li class="page-item">
+                        <a href="#" class="page-link" data-page="@(Model.PageNumber - 1)">Previous</a>
+                    </li>
+                }
+
+                @for (int i = 1; i <= Model.PageCount; i++)
+                {
+                    <li class="page-item @(i == Model.PageNumber ? "active" : "")">
+                        <a href="#" class="page-link" data-page="@i">@i</a>
+                    </li>
+                }
+
+                @if (Model.HasNextPage)
+                {
+                    <li class="page-item">
+                        <a href="#" class="page-link" data-page="@(Model.PageNumber + 1)">Next</a>
+                    </li>
+                }
+            </ul>
+        </div>
+</form>
+}

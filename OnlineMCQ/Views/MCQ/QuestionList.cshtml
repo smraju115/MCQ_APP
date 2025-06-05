@@ -1,4 +1,5 @@
-﻿@model IEnumerable<OnlineMCQ.Models.Question>
+﻿@using X.PagedList.Mvc.Core
+@model X.PagedList.IPagedList<OnlineMCQ.Models.Question>
 
 @{
     ViewData["Title"] = "QuestionList";
@@ -9,13 +10,13 @@
 <h2 class="text-center">All Question List</h2>
 
 <div class="mb-2">
-    <a asp-action="CreateQuestion" class="btn btn-primary">Create New Question</a>
+    <a asp-action="CreateQuestion" asp-controller="MCQ" class="btn btn-primary">Create New Question</a>
     <a asp-action="Index" asp-controller="MCQ" class="btn btn-info">Change Exam Time</a>
 </div>
 
 @if (TempData["SuccessMessage"] != null)
 {
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <div class="alert alert-success alert-dismissible shadow-lg fade show auto-dismiss-alert align-items-center" role="alert">
         @TempData["SuccessMessage"]
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
@@ -23,66 +24,93 @@
 
 @if (TempData["Message"] != null)
 {
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <div class="alert alert-danger alert-dismissible fade show auto-dismiss-alert" role="alert">
         @TempData["Message"]
        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 }
 
+@* <div class="row mb-3">
+    <div class="col-md-3">
+        <select id="subjectFilter" class="form-select">
+            <option value="">-- Select Subject --</option>
+            @if (ViewBag.Subjects != null)
+            {
+                @foreach (var subject in ViewBag.Subjects)
+                {
+                    <option value="@subject.SubjectId">@subject.SubjectName</option>
+                }
+            }
+            else
+            {
+                <option>No Subject Found</option>
+            }
+        </select>
+    </div>
+    <div class="col-md-3">
+        <select id="levelFilter" class="form-select">
+            <option value="">-- Select Level --</option>
+            @if (ViewBag.Levels != null)
+            {
+                @foreach (var level in ViewBag.Levels)
+                {
+                    <option value="@level.LevelId">@level.LevelName</option>
+                }
+            }
+            else
+            {
+                <option>No Level Found</option>
+            }
+        </select>
+    </div>
+    <div class="col-md-3">
+        <button type="button" class="btn btn-success" id="filterBtn"><i class="bi bi-funnel"></i> Filter</button>
+        <button type="button" class="btn btn-secondary" id="resetBtn"> <i class="bi bi-arrow-counterclockwise"></i> Reset</button>
+    </div>
+</div> *@
 
-@* <table class="table table-bordered">
-    <thead>
-        <tr>
-            <th># SL</th>
-            <th>Question</th>
-            <th>Option A</th>
-            <th>Option B</th>
-            <th>Option C</th>
-            <th>Option D</th>
-            <th>Correct Answer</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var question in Model)
-        {
-            <tr>
-                <td>@(sl ++)</td>
-                <td>@question.QuestionText</td>
-                <td>@question.OptionA</td>
-                <td>@question.OptionB</td>
-                <td>@question.OptionC</td>
-                <td>@question.OptionD</td>
-                <td>
-                    @if (question.CorrectAnswer == 1)
-                    {
-                        <text>A</text>
-                    }
-                    else if (question.CorrectAnswer == 2)
-                    {
-                        <text>B</text>
-                    }
-                    else if (question.CorrectAnswer == 3)
-                    {
-                        <text>C</text>
-                    }
-                    else
-                    {
-                        <text>D</text>
-                    }
-                </td>
-            </tr>
-        }
-    </tbody>
-</table> *@
 
-<form asp-action="DeleteSelectedQuestions" method="post" onsubmit="return confirm('Are you sure you want to delete the selected questions?');">
-    <button type="submit" class="btn btn-danger mb-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><i class="bi bi-trash"></i></button>
+<div class="row mb-3">
+    <div class="col-md-3">
+        <select id="subjectFilter" class="form-select">
+            <option value="0">-- Select Subject --</option>
+            @foreach (var s in ViewBag.Subjects)
+            {
+                <option value="@s.SubjectId">@s.SubjectName</option>
+            }
+        </select>
+    </div>
+    <div class="col-md-3">
+        <select id="levelFilter" class="form-select">
+            <option value="0">-- Select Level --</option>
+            @foreach (var l in ViewBag.Levels)
+            {
+                <option value="@l.LevelId">@l.LevelName</option>
+            }
+        </select>
+    </div>
+    <div class="col-md-3">
+        <button id="filterBtn" class="btn btn-success">Filter</button>
+        <button id="resetBtn" class="btn btn-secondary">Reset</button>
+    </div>
+</div>
 
+<!-- Placeholder for messages -->
+<div id="filterMessage" class="alert alert-warning d-none"></div>
+
+<!-- Questions table loads here -->
+<div id="questionTableContainer">
+    @await Html.PartialAsync("_QuestionTablePartial", null)
+</div>
+
+
+@* <form asp-action="DeleteSelectedQuestions" method="post" onsubmit="return confirm('Are you sure you want to delete the selected questions?');">
+    <button type="submit" class="btn btn-danger mb-2"><i class="bi bi-trash"></i></button>
     <div class="table-responsive">
-        <table class="table table-bordered">
+        <table class="table table-bordered" id="questionTable">
             <thead>
                 <tr>
-                    <th><input type="checkbox" id="selectAll" /></th>
+                    <th title="Select All"><input type="checkbox" id="selectAll" /></th>
                     <th># SL</th>
                     <th>Question</th>
                     <th>Option A</th>
@@ -93,47 +121,175 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var question in Model)
+                @if (!Model.Any())
                 {
                     <tr>
-                        <td>
-                            <input type="checkbox" name="selectedQuestionIds" value="@question.QuestionId" class="select-item" />
-                        </td>
-                        <td>@(sl++)</td>
-                        <td>@Html.Raw(question.QuestionText)</td>
-                        <td>@Html.Raw(question.OptionA)</td>
-                        <td>@Html.Raw(question.OptionB)</td>
-                        <td>@Html.Raw(question.OptionC)</td>
-                        <td>@Html.Raw(question.OptionD)</td>
-                        <td>
-                            @(question.CorrectAnswer == 1 ? "A" :
-                                question.CorrectAnswer == 2 ? "B" :
-                                question.CorrectAnswer == 3 ? "C" : "D")
-                        </td>
-
-                        @* <td>
-                        <form asp-action="DeleteQuestion" method="post" onsubmit="return confirm('Are you sure you want to delete this question?');">
-                            <input type="hidden" name="id" value="@question.QuestionId" />
-                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-                        </form>
-                    </td> *@
-
+                        <td colspan="8" class="text-center text-warning fw-bold">No Questions Found for selected Subject & Level</td>
                     </tr>
                 }
+                else
+                {
+                    @foreach (var question in Model)
+                    {
+                        <tr data-subject="@question.SubjectId" data-level="@question.LevelId">
+                            <td title="Select"><input type="checkbox" name="selectedQuestionIds" value="@question.QuestionId" class="select-item" /></td>
+                            <td>@(sl++)</td>
+                            <td>@Html.Raw(question.QuestionText)</td>
+                            <td>@Html.Raw(question.OptionA)</td>
+                            <td>@Html.Raw(question.OptionB)</td>
+                            <td>@Html.Raw(question.OptionC)</td>
+                            <td>@Html.Raw(question.OptionD)</td>
+                            <td>
+                                @(question.CorrectAnswer == 1 ? "A" :
+                                                        question.CorrectAnswer == 2 ? "B" :
+                                                        question.CorrectAnswer == 3 ? "C" : "D")
+                            </td>
+                        </tr>
+                    }
+
+                }
+
             </tbody>
         </table>
     </div>
-    
+</form> *@
 
-</form>
+
+<!-- Pagination -->
+@* 
+<div class="d-flex justify-content-center mt-4">
+    @Html.PagedListPager(Model, page => Url.Action("QuestionList", new
+    {
+        page,
+        subjectId = ViewBag.SelectedSubjectId,
+        levelId = ViewBag.SelectedLevelId
+        }),
+        new PagedListRenderOptions
+        {
+            LiElementClasses = new[] { "page-item" },
+            PageClasses = new[] { "page-link" },
+
+            DisplayLinkToFirstPage = PagedListDisplayMode.Never,
+            DisplayLinkToLastPage = PagedListDisplayMode.Never,
+            DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+            DisplayLinkToNextPage = PagedListDisplayMode.Always,
+
+            LinkToPreviousPageFormat = "Previous",
+            LinkToNextPageFormat = "Next",
+
+            MaximumPageNumbersToDisplay = 5,
+            DisplayEllipsesWhenNotShowingAllPageNumbers = true,
+
+            UlElementClasses = new[] { "pagination" },
+        })
+</div> *@
 
 @section Scripts {
     <script>
-        document.getElementById("selectAll").addEventListener("change", function () {
+           function loadQuestions(subjectId = 0, levelId = 0, page = 1) {
+            $.ajax({
+                url: '/MCQ/FilteredQuestions',
+                type: 'GET',
+                data: { subjectId, levelId, page },
+                success: function (result) {
+                    if (!result || result.trim() === '') {
+                        $('#filterMessage').removeClass('d-none').text('No Data Found');
+                        $('#questionTableContainer').html('');
+                    } else {
+                        $('#filterMessage').addClass('d-none');
+                        $('#questionTableContainer').html(result);
+                    }
+                },
+                error: function () {
+                    alert('Error loading data.');
+                }
+            });
+        }
+
+        $('#filterBtn').click(function () {
+            const subjectId = $('#subjectFilter').val();
+            const levelId = $('#levelFilter').val();
+
+            if (subjectId == 0 && levelId == 0) {
+                $('#filterMessage').removeClass('d-none').text('Please select at least one filter');
+                return;
+            }
+
+            loadQuestions(subjectId, levelId);
+        });
+
+        $('#resetBtn').click(function () {
+            $('#subjectFilter').val(0);
+            $('#levelFilter').val(0);
+            $('#filterMessage').addClass('d-none');
+            loadQuestions(); // Load all questions
+        });
+
+        // AJAX Pagination
+        $(document).on('click', '.pagination a', function (e) {
+            e.preventDefault();
+            const page = $(this).data('page');
+            const subjectId = $('#subjectFilter').val();
+            const levelId = $('#levelFilter').val();
+            loadQuestions(subjectId, levelId, page);
+        });
+
+        // Handle pagination click via delegation
+        $(document).on('click', '.pagination a', function (e) {
+            e.preventDefault();
+            const page = $(this).data('page');
+            const subjectId = $('#subjectFilter').val();
+            const levelId = $('#levelFilter').val();
+            if (subjectId != 0 && levelId != 0) {
+                loadQuestions(subjectId, levelId, page);
+            }
+        });
+
+         // Checkbox select all for delete
+        document.getElementById("selectAll")?.addEventListener("change", function () {
             var checkboxes = document.querySelectorAll(".select-item");
             for (var checkbox of checkboxes) {
                 checkbox.checked = this.checked;
             }
         });
+
     </script>
+
+    @* <script>
+
+        $('#filterBtn').click(function () {
+            var subjectId = $('#subjectFilter').val();
+            var levelId = $('#levelFilter').val();
+
+            $('#questionTable tbody tr').each(function () {
+                var rowSubject = $(this).data('subject');
+                var rowLevel = $(this).data('level');
+
+                var show = true;
+
+                if (subjectId && rowSubject != subjectId)
+                    show = false;
+
+                if (levelId && rowLevel != levelId)
+                    show = false;
+
+                $(this).toggle(show);
+            });
+        });
+
+        $('#resetBtn').click(function () {
+            $('#subjectFilter').val('');
+            $('#levelFilter').val('');
+            $('#questionTable tbody tr').show();
+        });
+       
+
+        // Checkbox select all for delete
+        document.getElementById("selectAll")?.addEventListener("change", function () {
+            var checkboxes = document.querySelectorAll(".select-item");
+            for (var checkbox of checkboxes) {
+                checkbox.checked = this.checked;
+            }
+        });
+    </script> *@
 }

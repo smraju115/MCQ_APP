@@ -68,6 +68,24 @@ namespace OnlineMCQ.Migrations
                     b.ToTable("ExamSettings");
                 });
 
+            modelBuilder.Entity("OnlineMCQ.Models.Level", b =>
+                {
+                    b.Property<int>("LevelId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LevelId"));
+
+                    b.Property<string>("LevelName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("LevelId");
+
+                    b.ToTable("Levels");
+                });
+
             modelBuilder.Entity("OnlineMCQ.Models.Notice", b =>
                 {
                     b.Property<int>("Id")
@@ -107,6 +125,9 @@ namespace OnlineMCQ.Migrations
                     b.Property<int>("CorrectAnswer")
                         .HasColumnType("int");
 
+                    b.Property<int>("LevelId")
+                        .HasColumnType("int");
+
                     b.Property<string>("OptionA")
                         .IsRequired()
                         .HasMaxLength(200)
@@ -132,9 +153,34 @@ namespace OnlineMCQ.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
+                    b.Property<int>("SubjectId")
+                        .HasColumnType("int");
+
                     b.HasKey("QuestionId");
 
+                    b.HasIndex("LevelId");
+
+                    b.HasIndex("SubjectId");
+
                     b.ToTable("Questions");
+                });
+
+            modelBuilder.Entity("OnlineMCQ.Models.Subject", b =>
+                {
+                    b.Property<int>("SubjectId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SubjectId"));
+
+                    b.Property<string>("SubjectName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("SubjectId");
+
+                    b.ToTable("Subjects");
                 });
 
             modelBuilder.Entity("OnlineMCQ.Models.TestResult", b =>
@@ -191,6 +237,25 @@ namespace OnlineMCQ.Migrations
                     b.ToTable("UserTests");
                 });
 
+            modelBuilder.Entity("OnlineMCQ.Models.Question", b =>
+                {
+                    b.HasOne("OnlineMCQ.Models.Level", "Level")
+                        .WithMany("Questions")
+                        .HasForeignKey("LevelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("OnlineMCQ.Models.Subject", "Subject")
+                        .WithMany("Questions")
+                        .HasForeignKey("SubjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Level");
+
+                    b.Navigation("Subject");
+                });
+
             modelBuilder.Entity("OnlineMCQ.Models.TestResult", b =>
                 {
                     b.HasOne("OnlineMCQ.Models.UserTest", "UserTest")
@@ -200,6 +265,16 @@ namespace OnlineMCQ.Migrations
                         .IsRequired();
 
                     b.Navigation("UserTest");
+                });
+
+            modelBuilder.Entity("OnlineMCQ.Models.Level", b =>
+                {
+                    b.Navigation("Questions");
+                });
+
+            modelBuilder.Entity("OnlineMCQ.Models.Subject", b =>
+                {
+                    b.Navigation("Questions");
                 });
 #pragma warning restore 612, 618
         }

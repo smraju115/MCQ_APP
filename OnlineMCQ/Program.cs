@@ -22,9 +22,9 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 
 builder.Services.AddDbContext<ApplicationDbContext>(op => op.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-//Ratelimit
+//Ratelimit register
 builder.Services.AddRateLimiter(options =>
-{
+{    
     options.AddFixedWindowLimiter("ExamLimiter", config =>
     {
         config.Window = TimeSpan.FromMinutes(1);
@@ -48,7 +48,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 //new add
-app.UseRateLimiter();
+app.UseRateLimiter(); //enable for this app
 app.UseHttpsRedirection();
 app.UseHsts();
 
